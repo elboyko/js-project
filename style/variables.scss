@@ -1,0 +1,33 @@
+// Fonts
+$font-main: 'Roboto', sans-serif;
+
+
+// Colors
+$color: #1E2538;
+$fontcolor: white;
+$maincolor: #3657CB;
+
+
+@mixin button {
+   display: flex;
+   justify-content: space-around;
+   max-width: 160px;
+   text-align: center;
+   align-items: center;
+   padding: 10px;
+   border-radius: 10px;
+   background: $maincolor;
+   box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.80);
+   color: $fontcolor;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 1.6;
+   border: none;
+   transition: all .5s;
+
+
+   &:hover {
+      background-color: $fontcolor;
+      color: $maincolor;
+   }
+}

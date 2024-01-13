@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/main.css">
+   <title>registration</title>
+</head>
+
+<body>
+   <div class="registration">
+      <div class="container-registration">
+         <button class="registration__close">
+            <a id="link" href="index.html"> <img id="close" src="./style/images/vector.svg" alt="close"></a>
+
+         </button>
+         <div class="registration__inner">
+            <h1 class="registration__title">Зарегистрироваться</h1>
+            <form name="formOne" action="" class="registration__form" novalidate>
+               <input id="firstName" class="registration__form-input" type="text" placeholder="Имя"
+                  pattern="^[a-zA-ZА-Яа-я]+$" required>
+               <span class="error-name error"></span>
+               <input id="firstSurname" class="registration__form-input" type="text" placeholder="Фамилия"
+                  pattern="^[a-zA-ZА-Яа-я]+$" required>
+               <span class="error-surname error"></span>
+               <input id="firstPassword" class="registration__form-input" type="password"
+                  placeholder="Придумайте пароль" required>
+               <span class="error-password error"></span>
+               <input id="firstEmail" class="registration__form-input" type="email" placeholder="Ваш email" required>
+               <span class="error-email error"></span>
+               <!-- <input id="firstPhone" class="registration__form-input" type="phone" placeholder="+7(000)-000-00-00">
+               <span class="error-phone error"></span> -->
+               <button class="registration__form-btn" type="submit">Зарегистрироваться</button>
+            </form>
+         </div>
+      </div>
+   </div>
+
+
+
+   <script src="./registration.js"></script>
+</body>
+
+</html>
