@@ -176,17 +176,23 @@ ul {
   background-color: #1E2538;
   padding-bottom: 30px;
 }
+.search__cartoon {
+  font-size: 50px;
+  color: #F2F60F;
+  margin-bottom: 20px;
+}
 .search__form {
   display: flex;
   flex-direction: column;
 }
 .search__title {
-  font-size: 55px;
+  font-size: 40px;
   font-weight: 900;
   margin-bottom: 50px;
+  color: rgb(58, 197, 243);
 }
 .search__result {
-  margin: 100px auto 100px;
+  margin: 0px auto 100px;
 }
 .search__img {
   display: block;
@@ -216,7 +222,7 @@ ul {
 .search__btn {
   display: flex;
   justify-content: space-around;
-  max-width: 160px;
+  width: 160px;
   text-align: center;
   align-items: center;
   padding: 10px;
@@ -229,10 +235,24 @@ ul {
   line-height: 1.6;
   border: none;
   transition: all 0.5s;
+  margin-bottom: 50px;
 }
 .search__btn:hover {
   background-color: white;
   color: #3657CB;
+}
+
+.film {
+  display: flex;
+}
+.film__name {
+  font-size: 20px;
+  color: #F2F60F;
+  margin-bottom: 10px;
+}
+.film__img {
+  margin-right: 20px;
+  max-width: 300px;
 }
 
 .red__line {
@@ -256,7 +276,7 @@ ul {
     padding: 10px 30px;
   }
   .search__result {
-    margin: 50px auto 50px;
+    margin: 0px auto 50px;
   }
   .search__img {
     width: 100%;
