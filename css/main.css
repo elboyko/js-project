@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
-
 @import url(https://fonts.googleapis.com/css?family=Anton);
-
 html,
 body,
 div,
@@ -168,7 +166,6 @@ input,
 select {
   vertical-align: middle;
 }
-
 
 body {
   padding: 0;
@@ -379,8 +376,7 @@ ul {
 }
 .search__btn {
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   width: 160px;
   text-align: center;
   align-items: center;
@@ -395,19 +391,13 @@ ul {
   border: none;
   transition: all 0.5s;
   margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .search__btn:hover {
   background-color: white;
   color: #3657CB;
 }
-
-
-.film {
-  display: -webkit-box;
-  display: -ms-flexbox;
-=======
 .search__film {
-
   display: flex;
   flex-wrap: wrap;
 }
@@ -753,7 +743,6 @@ body.dark-theme {
   color: black;
 }
 
-
 /*конец блока ЧАТ*/
 .animation-container {
   max-width: 1400;
@@ -774,11 +763,7 @@ body.dark-theme {
   font-size: 45px;
   line-height: 1;
   margin-top: -11px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1) 2s;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1) 2s;
-  -webkit-transform: translateX(-1000%);
-  -ms-transform: translateX(-1000%);
   transform: translateX(-1000%);
   letter-spacing: -1px;
   text-transform: uppercase;
@@ -786,8 +771,6 @@ body.dark-theme {
 }
 
 .animate .ks {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -801,21 +784,17 @@ span {
 }
 
 .break {
-  -webkit-transition: all 0.3s ease-in-out 1.2s;
   transition: all 0.3s ease-in-out 1.2s;
   letter-spacing: -0.07em;
 }
 
 .un {
-  -webkit-transition: all 0.3s ease-in-out 1s;
   transition: all 0.3s ease-in-out 1s;
   letter-spacing: -0.07em;
 }
 
 .animate .un {
   font-size: 60px;
-  -webkit-transform: scale(1.5, 1.5);
-  -ms-transform: scale(1.5, 1.5);
   transform: scale(1.5, 1.5);
   opacity: 1;
   filter: alpha(opacity=100);
@@ -823,8 +802,6 @@ span {
 
 .animate .break {
   font-size: 60px;
-  -webkit-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
   transform: scale(1, 1);
   opacity: 1;
   filter: alpha(opacity=100);
@@ -833,20 +810,12 @@ span {
 .footer {
   padding: 50px 0;
   background-color: #1E2538;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0;
   border: none;
   background-color: #1E2538;
 }
 
-/*конец блока ЧАТ*//
-
+/*конец блока ЧАТ*//*# sourceMappingURL=main.css.map */

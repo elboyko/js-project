@@ -66,7 +66,7 @@ document.querySelector('.search__btn').addEventListener('click', getResponse)
 
 
 
-}
+
 
 // getResponse()
 
@@ -233,10 +233,10 @@ var hotbod = document.querySelector("body");
 
 
 function doStuff() {
-    hotbod.className += " animate";
+	hotbod.className += " animate";
 }
 
-window.onload = function() {
-    doStuff();
+window.onload = function () {
+	doStuff();
 };
 
