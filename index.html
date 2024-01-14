@@ -9,6 +9,10 @@
 </head>
 <body>
    <header class="header">
+
+
+
+
       <div class="container">
          <div class="header__inner">
             <a href="#" class="header__logo">
@@ -32,6 +36,9 @@
                   </li>
                   <li class="menu__item">
                      <a href="#chat" class="menu__link">чат</a>
+                  </li>
+                  <li class="menu__item">
+                     <a href="#" class="menu__link">войти</a>
                   </li>
                   <li class="mobile__nav">
                      <ul class="mobile__social">
@@ -165,8 +172,8 @@
                </li>
             </ul>
             <!-- переключатель темы-->
-              <button id="themeToggle">Сменить тему</button>
-            <a id="header-link" href="#" class="header__link-in">Войти</a>
+            <button id="themeToggle">Сменить тему</button>
+            <!-- <a id="header-link" href="#" class="header__link-in">Войти</a> -->
 
          </div>
       </div>
@@ -187,16 +194,12 @@
          " src="./style/images/main__cat.jpg" alt="">
          </div>
          <h2 class="search__title">Лучшие мультфильмы 2023 года</h2>
-         <!-- <form action="" class="search__form"> -->
-         <!-- <input type="text" class="search__film" placeholder="Введите название"> -->
          <button class="search__btn">Показать</button>
-         <!-- </form> -->
-         <ul class="film">
-
+         <ul class="search__film">
          </ul>
-
       </div>
    </section>
+
 
   
     <!-- начало блока Чат-->
@@ -251,6 +254,42 @@
       </div>
     </div>
   </footer>
+=======
+
+   <!-- начало блока Чат-->
+   <div class="chat">
+      <div class="container">
+         <h2 id="chat-title" class="search__title"> Чат киноманов</h2>
+         <div class="form_wrapper">
+            <div class="form">
+               <input type="text" id="name" max="8" class="input" placeholder="Введите ваше имя" />
+               <div class="name">
+                  <p>показывать Ваше имя?</p>
+                  <label for="name__yes">Да</label>
+                  <input type="radio" id="name_yes" name="nameCheckbox" value="name_yes" checked />
+                  <label for="name__no">Нет</label>
+                  <input type="radio" id="name_no" name="nameCheckbox" value="name_no" />
+               </div>
+               <input type="url" class="input" id="avatar" value="" placeholder="Введите ссылку на аватар" />
+               <textarea id="message" class="input message" min="18" max="100"
+                  placeholder="Введите ваше сообщение"></textarea>
+
+               <button id="chat_btn" class="search__btn">Добавить комментарий</button>
+
+            </div>
+            <div class="comments" id="comments">
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- конец блока Чат-->
+
+
+
+
+
+
 
    <script src="/index.js"></script>
 </body>
