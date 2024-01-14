@@ -66,6 +66,16 @@ document.querySelector('.search__btn').addEventListener('click', getResponse)
 
 
 
+}
+
+// getResponse()
+
+
+
+document.querySelector('.search__btn').addEventListener('click', getResponse)
+
+
+
 //Блок ЧАТ
 const button = document.getElementById('chat_btn');
 const comments = document.querySelector('#comments');
@@ -212,10 +222,21 @@ document.getElementById('themeToggle').addEventListener('click', function () {
 	if (currentTheme === 'light-theme') {
 		document.body.className = 'dark-theme';
 	} else {
-		document.body.className = 'light-theme';
+		document.container.className = 'light-theme';
 	}
 });
 
 
 
+//title animation
+var hotbod = document.querySelector("body");
+
+
+function doStuff() {
+    hotbod.className += " animate";
+}
+
+window.onload = function() {
+    doStuff();
+};
 

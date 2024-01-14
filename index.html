@@ -7,9 +7,11 @@
    <title>KinoArea</title>
    <link rel="stylesheet" href="/css/main.css" />
 </head>
-
 <body>
    <header class="header">
+
+
+
 
       <div class="container">
          <div class="header__inner">
@@ -33,7 +35,7 @@
                      <a href="registration.html" class="menu__link">регистрация</a>
                   </li>
                   <li class="menu__item">
-                     <a href="#" class="menu__link">чат</a>
+                     <a href="#chat" class="menu__link">чат</a>
                   </li>
                   <li class="menu__item">
                      <a href="#" class="menu__link">войти</a>
@@ -176,10 +178,17 @@
          </div>
       </div>
    </header>
-
    <section class="search">
+
+      <!--title animation-->
+     <div class="animation-container">  
+  <div class="animation">
+    <span class="un">Смотрите</span><span class="break"> фильмы</span>
+  </div>
+  <div class="ks">вместе с нами!</div>
+</div></div>
+
       <div class="container">
-         <h1 class="search__cartoon">Смотрите фильмы вместе с нами</h1>
          <div class="search__result">
             <img class="search__img
          " src="./style/images/main__cat.jpg" alt="">
@@ -191,6 +200,61 @@
       </div>
    </section>
 
+
+  
+    <!-- начало блока Чат-->
+	<div class="chat">	
+         <div class="container">
+	<h2 id="chat-title" class="search__title"><a name="chat"> Чат киноманов</a></h2>
+
+    <div class="form_wrapper">
+		<div class="form">
+			<input type="text" id="name" max="8" class="input" placeholder="Введите ваше имя"/>
+			<div class="name">
+			<p>показывать Ваше имя?</p>
+				<label for="name__yes">Да</label>
+				<input type="radio" id="name_yes" name="nameCheckbox" value="name_yes" checked />
+				<label for="name__no">Нет</label>
+				<input type="radio" id="name_no" name="nameCheckbox" value="name_no"/>
+			</div>
+			<input type="url" class="input" id="avatar" value="" placeholder="Введите ссылку на аватар" />
+			<textarea id="message" class="input message" min="18" max="100" placeholder="Введите ваше сообщение"></textarea>
+			 
+          <button id="chat_btn" class="search__btn">Добавить комментарий</button>
+		
+		</div>
+		<div class="comments" id="comments">
+			</div>
+			</div></div>
+		</div></div>
+     <!-- конец блока Чат-->
+<footer class="footer">
+        <p class="rights">
+          &#169; created by <a href="https://itgirlschool.com/">  ITGIRLS</a>
+        </p>
+      <div class="footer__info-contacts">
+        <a name="contacts" href="https://vk.com/">
+          <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M45.1197 27.0792C45.2979 26.4852 45.1197 26.0693 44.288 26.0693H41.5157C40.8028 26.0693 40.486 26.4456 40.3078 26.8614C40.3078 26.8614 38.9018 30.307 36.9018 32.5248C36.2484 33.1782 35.9711 33.3763 35.6147 33.3763C35.4365 33.3763 35.1791 33.1782 35.1791 32.5842V27.0792C35.1791 26.3664 34.981 26.0693 34.387 26.0693H30.0306C29.5949 26.0693 29.3177 26.406 29.3177 26.703C29.3177 27.3763 30.3078 27.5347 30.4266 29.3961V33.4753C30.4266 34.3664 30.2682 34.5248 29.9117 34.5248C28.981 34.5248 26.684 31.0792 25.3375 27.1188C25.0603 26.3862 24.8028 26.0693 24.09 26.0693H21.3177C20.5256 26.0693 20.3672 26.4456 20.3672 26.8614C20.3672 27.5941 21.2979 31.2377 24.7434 36.0495C27.0405 39.3367 30.2682 41.1188 33.1989 41.1188C34.9612 41.1188 35.1791 40.7228 35.1791 40.0495V37.5545C35.1791 36.7624 35.3375 36.604 35.9117 36.604C36.3276 36.604 37.0207 36.802 38.6642 38.3862C40.5454 40.2674 40.8622 41.1188 41.9117 41.1188H44.684C45.4761 41.1188 45.8721 40.7228 45.6345 39.9505C45.3771 39.1782 44.486 38.0495 43.2979 36.703C42.6444 35.9307 41.6741 35.1188 41.3969 34.703C40.981 34.1683 41.0999 33.9307 41.3969 33.4753C41.3969 33.4555 44.783 28.703 45.1197 27.0792Z"
+              fill="#31a9dd" />
+            <rect x="13" y="13" width="40" height="40" rx="20" stroke="#31a9dd" stroke-width="2" />
+          </svg>
+        </a>
+        <a href="">
+          <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M23.2875 31.839C23.2875 31.839 32.5753 27.8877 35.7964 26.4963C37.0313 25.9398 41.2188 24.1589 41.2188 24.1589C41.2188 24.1589 43.1516 23.3798 42.9905 25.272C42.9367 26.0511 42.5073 28.7781 42.0778 31.7277C41.4335 35.9018 40.7356 40.4653 40.7356 40.4653C40.7356 40.4653 40.6282 41.7453 39.7156 41.9679C38.8029 42.1905 37.2996 41.1888 37.0313 40.9662C36.8165 40.7993 33.0047 38.2948 31.6089 37.0704C31.2331 36.7365 30.8036 36.0687 31.6625 35.2896C33.5953 33.453 35.9038 31.1712 37.2996 29.7243C37.9439 29.0564 38.5881 27.4981 35.9038 29.3903C32.0921 32.1173 28.334 34.6774 28.334 34.6774C28.334 34.6774 27.475 35.2339 25.8644 34.733C24.2538 34.2322 22.3747 33.5643 22.3747 33.5643C22.3747 33.5643 21.0863 32.7295 23.2875 31.839Z"
+              fill="#31a9dd" />
+            <rect x="13" y="13" width="40" height="40" rx="20" stroke="#31a9dd" stroke-width="2" />
+          </svg>
+        </a>
+       
+
+      </div>
+    </div>
+  </footer>
+=======
 
    <!-- начало блока Чат-->
    <div class="chat">
@@ -226,7 +290,7 @@
 
 
 
+
    <script src="/index.js"></script>
 </body>
-
 </html>
