@@ -13,7 +13,7 @@ body {
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    font-size: large;
    color: $fontcolor;
-   transition: background-color 0.3s ease;
+transition: background-color 0.3s ease;
 }
 
 h1 {
@@ -219,12 +219,6 @@ ul {
    background-color: #1E2538;
    padding-bottom: 30px;
 
-   &__cartoon {
-      font-size: 50px;
-      color: #F2F60F;
-      margin-bottom: 20px;
-   }
-
    &__form {
       display: flex;
       flex-direction: column;
@@ -232,14 +226,13 @@ ul {
 
 
    &__title {
-      font-size: 40px;
+      font-size: 55px;
       font-weight: 900;
       margin-bottom: 50px;
-      color: rgb(58, 197, 243);
    }
 
    &__result {
-      margin: 0px auto 100px;
+      margin: 100px auto 100px;
    }
 
    &__img {
@@ -268,28 +261,12 @@ ul {
 
    &__btn {
       @include button;
-      margin-bottom: 50px;
 
    }
 }
 
 //section search finish
 
-.film {
-   display: flex;
-
-   &__name {
-      font-size: 20px;
-      color: #F2F60F;
-      margin-bottom: 10px;
-   }
-
-   &__img {
-      margin-right: 20px;
-      max-width: 300px;
-   }
-
-}
 
 .red__line {
    border: 2px solid red;
@@ -317,9 +294,8 @@ ul {
    }
 
    .search {
-
       &__result {
-         margin: 0px auto 50px;
+         margin: 50px auto 50px;
       }
 
       &__img {
@@ -660,5 +636,3 @@ color: black;
 }
 
 /*конец блока ЧАТ*/
-
-
