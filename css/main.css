@@ -259,7 +259,7 @@ ul {
   border: none;
   background-color: #1E2538;
 }
-.menu__btn span {
+.menu__span {
   background-color: white;
   height: 2px;
   width: 100%;
@@ -284,6 +284,7 @@ ul {
 
 .registration {
   height: 100vh;
+  order: 100;
 }
 .registration__close {
   display: flex;
@@ -648,8 +649,6 @@ span {
   font-family: "Anton", Helvetica, sans-serif;
   font-size: 40px;
   text-transform: uppercase;
-  opacity: 0;
-  color: #fff;
   filter: alpha(opacity=0);
 }
 

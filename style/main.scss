@@ -115,9 +115,10 @@ ul {
       padding: 0;
       border: none;
       background-color: $color;
+
    }
 
-   &__btn span {
+   &__span {
       background-color: $fontcolor;
       height: 2px;
       width: 100%;
@@ -149,6 +150,7 @@ ul {
 
 .registration {
    height: 100vh;
+   order: 100;
 
    &__close {
       display: flex;
@@ -534,8 +536,8 @@ span {
 
    text-transform: uppercase;
 
-   opacity: 0;
-   color: #fff;
+   // opacity: 0;
+   // color: #fff;
 
    filter: alpha(opacity=0);
 }

@@ -52,6 +52,7 @@ async function getResponse() {
 
 	</li>
 	   <li class="search__film-post">
+
 	<img class="search__film-img" src="${content.docs[3].poster.url}" alt="" >
 	<h4 class="search__film-name">${content.docs[3].name}</h4>
 	</li>
