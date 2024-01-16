@@ -204,9 +204,9 @@ loadComments();
 
 //переключение темы
 document.getElementById('themeToggle').addEventListener('click', function () {
-	const currentTheme = document.body.className;
+	const currentTheme = document.header.className;
 	if (currentTheme === 'light-theme') {
-		document.body.className = 'dark-theme';
+		document.header.className = 'dark-theme';
 	} else {
 		document.container.className = 'light-theme';
 	}
@@ -341,3 +341,15 @@ const addMovie = () => {
 	})
 };
 document.getElementById('comedy_btn').addEventListener('click', addMovie);
+
+//comedysound
+const comedyButton = document.getElementById("animation");
+function makeSound() {
+	const audio = new Audio();
+	audio.preload = 'auto';
+	audio.src = '/style/images/superhero-theme-7963.mp3';
+	audio.play();
+		
+}
+
+comedyButton.onclick = makeSound;
