@@ -416,10 +416,7 @@ body.dark-theme {
 }
 
 .chat {
-   background: $color;
-   background-image: url('./images/cinema.webp');
-   padding-top: 60px;
-   padding-bottom: 20px;
+   background-image: url('/style/images/cinema.webp');
 }
 
 .form_wrapper {
@@ -445,6 +442,7 @@ body.dark-theme {
    border-color: darkslateblue;
    border-style: 1rem solid;
    color: $fontcolor;
+   
 }
 
 .input {
@@ -455,6 +453,8 @@ body.dark-theme {
    border-style: 1rem solid;
    color: #000000;
    color: $fontcolor;
+   border-radius: 1em;
+
 }
 
 
@@ -476,7 +476,7 @@ body.dark-theme {
 }
 
 .comments::-webkit-scrollbar-track {
-   background: greenyellow;
+   background: rgb(238, 190, 131);
    /* color of the tracking area */
 }
 
@@ -485,7 +485,7 @@ body.dark-theme {
    /* color of the scroll thumb */
    border-radius: 20px;
    /* roundness of the scroll thumb */
-   border: 3px solid greenyellow;
+   border: 3px solid rgb(238, 190, 131);
    /* creates padding around scroll thumb */
 }
 
@@ -496,11 +496,12 @@ body.dark-theme {
    grid-template-rows: 25% 25% 20% 20% 10%;
    text-align: center;
    align-items: center;
-   background: lightgreen;
+   background: rgb(238, 190, 131); 
+   border-radius: 1em;
 }
 
 ::placeholder {
-   color: yellow;
+  color: rgb(238, 190, 131);
 }
 
 .comment__date {
@@ -564,7 +565,7 @@ body.dark-theme {
    line-height: 1;
    letter-spacing: -.07em;
    color: #fff;
-
+   cursor: pointer;
 }
 
 .ks {
@@ -650,7 +651,7 @@ span {
 
 h3 {
    font-size: 40px;
-   color: yellow;
+   color: rgb(58, 197, 243);
    padding: 35px;
    justify-content: center;
    align-items: center;

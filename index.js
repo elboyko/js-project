@@ -369,3 +369,15 @@ const addMovie = () => {
 	})
 };
 document.getElementById('comedy_btn').addEventListener('click', addMovie);
+
+//comedysound
+const comedyButton = document.getElementById("animation");
+function makeSound() {
+	const audio = new Audio();
+	audio.preload = 'auto';
+	audio.src = '/style/images/superhero-theme-7963.mp3';
+	audio.play();
+
+}
+
+comedyButton.onclick = makeSound;
