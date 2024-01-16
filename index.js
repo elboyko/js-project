@@ -35,42 +35,27 @@ async function getResponse() {
 
 	list.innerHTML += `
 	      <li class="search__film-post">
-	<h4 class="search__film-name">${content.docs[0].name}</h4>
 	<img class="search__film-img" src="${content.docs[0].poster.url}" alt="" >
+	<h4 class="search__film-name">${content.docs[0].name}</h4>
 
 	</li>
 	   <li class="search__film-post">
-	<h4 class="search__film-name">${content.docs[1].name}</h4>
 	<img class="search__film-img" src="${content.docs[1].poster.url}" alt="" >
+	<h4 class="search__film-name">${content.docs[1].name}</h4>
 	</li>
 
 	</li>
 	   <li class="search__film-post">
-	<h4 class="search__film-name">${content.docs[2].name}</h4>
 	<img class="search__film-img" src="${content.docs[2].poster.url}" alt="" >
+	<h4 class="search__film-name">${content.docs[2].name}</h4>
 	</li>
 
 	</li>
 	   <li class="search__film-post">
-	<h4 class="search__film-name">${content.docs[3].name}</h4>
 	<img class="search__film-img" src="${content.docs[3].poster.url}" alt="" >
+	<h4 class="search__film-name">${content.docs[3].name}</h4>
 	</li>
  `}
-
-document.querySelector('.search__btn').addEventListener('click', getResponse)
-
-
-
-
-
-
-
-
-
-
-// getResponse()
-
-
 
 document.querySelector('.search__btn').addEventListener('click', getResponse)
 
@@ -240,3 +225,118 @@ window.onload = function () {
 	doStuff();
 };
 
+
+//comedy block
+
+
+const data = [
+	{
+		id: 1,
+		type: "romantic-comedy",
+		title: "Зачарованная",
+		star: "Эми Адамс",
+		rating: "рейтинг: IMDb 7.1, Кинопоиск 7.0",
+		image: "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/e828e75f-a992-4f47-a58c-e103052d7d51/576x"
+	},
+	{
+		id: 2,
+		type: "family-comedy",
+		title: "Собачья жизнь",
+		year: 2017,
+		rating: "рейтинг: IMDb 6.9, Кинопоиск 7.8",
+		image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQexcz9NPU8X6bBWrmx6wEA5CQ-EKQz7DfeEC5dQGq5G97QDsZpPpfxyKy1b773zHtOjs&usqp=CAU"
+	},
+	{
+		id: 3,
+		type: "romantic-comedy",
+		title: "Из 13 в 30",
+		star: "Дженнифер Гарнер",
+		rating: "рейтинг: IMDb 6.1, Кинопоиск 6.9",
+		image: "https://www.themoviedb.org/t/p/original/AwwMj5oHPUzPsONvv57oUusAQ1H.jpg"
+	},
+	{
+		id: 4,
+		type: "family-comedy",
+		title: "Приключения Паддингтона",
+		year: 2014,
+		rating: "рейтинг: IMDb 7.2, Кинопоиск 7.2",
+		image: "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6b/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%C2%AB%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D0%BE%D0%BD%D0%BE%D0%BA_%D0%9F%D0%B0%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D1%82%D0%BE%D0%BD%C2%BB.jpg/210px-%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%C2%AB%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D0%BE%D0%BD%D0%BE%D0%BA_%D0%9F%D0%B0%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D1%82%D0%BE%D0%BD%C2%BB.jpg"
+	}
+];
+
+
+class Comedy {
+	constructor(type, rating, title, image) {
+		this.type = type;
+		this.rating = rating;
+		this.title = title;
+		this.image = image
+	}
+
+	getInfo() {
+		let info = `${this.type} ${this.title}`;
+		return info;
+	}
+
+	getRating
+		() {
+		let rating = `Искрометная ${this.type} "${this.title}" для хорошего настроения! У этой комедии ${this.rating}.`;
+		return rating;
+	}
+}
+
+class Family extends Comedy {
+	constructor(type, rating, title, image, year) {
+		super(type, rating, title, image);
+		this.year = year;
+	}
+	getYear() {
+		let year = `Комедия "${this.title}"- лучшая комедия ${this.year} года!`;
+		return year;
+	}
+}
+class Romantic extends Comedy {
+	constructor(type, rating, title, image, star) {
+		super(type, rating, title, image);
+		this.star = star;
+	}
+
+	getStarName() {
+		let star = `В главной роли комедии "${this.title}" восхитительная актриса: ${this.star}.`;
+		return star;
+	}
+}
+
+const addMovie = () => {
+	data.forEach(item => {
+		const list = document.getElementById("list");
+		const newMovie = document.createElement("div");
+		newMovie.classList.add("movie");
+		list.appendChild(newMovie);
+		const newImage = document.createElement("img");
+		newImage.classList.add("image");
+		const newTitle = document.createElement("h2");
+		newTitle.classList.add("title");
+		const newRating = document.createElement("div");
+		const newDescription = document.createElement("div");
+		newMovie.append(newImage, newTitle, newRating, newDescription);
+		switch (item.type) {
+			case "family-comedy":
+				let newFam = new Family("семейная комедия: ", item.rating, item.title, item.image, item.year);
+				newImage.src = newFam.image;
+				newTitle.textContent = newFam.getInfo();
+				newDescription.textContent = newFam.getYear();
+				newRating.textContent = newFam.getRating();
+				break;
+			case "romantic-comedy":
+				let newRom = new Romantic("романтическая комедия: ", item.rating, item.title, item.image, item.star,);
+				newImage.src = newRom.image;
+				newTitle.textContent = newRom.getInfo();
+				newDescription.textContent = newRom.getStarName();
+				newRating.textContent = newRom.getRating();
+				break;
+
+		}
+	})
+};
+document.getElementById('comedy_btn').addEventListener('click', addMovie);
