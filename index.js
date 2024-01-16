@@ -9,6 +9,23 @@ menuBtn.addEventListener('click', function () {
 menuClose.addEventListener('click', function () {
 	menuList.classList.remove('menu__list--open');
 });
+const loginInput = document.querySelector('#input-in')
+const formLogin = document.querySelector('.menu__login');
+const loginLink = document.querySelector('.menu__link-login');
+loginLink.addEventListener('click', openLogin);
+function openLogin() {
+	formLogin.classList.add('.showLogin');
+	console.log('open');
+}
+loginInput.addEventListener('click', closeLogin);
+function closeLogin() {
+	formLogin.classList.remove('.showLogin');
+	console.log('close');
+}
+
+
+
+
 
 
 //вывод на страницу лучших фильмов 2023 года
@@ -60,6 +77,7 @@ async function getResponse() {
 
 document.querySelector('.search__btn').addEventListener('click', getResponse)
 
+//логин
 
 
 //Блок ЧАТ
@@ -203,15 +221,25 @@ const loadComments = () => {
 loadComments();
 
 //переключение темы
-document.getElementById('themeToggle').addEventListener('click', function () {
-	const currentTheme = document.body.className;
-	if (currentTheme === 'light-theme') {
-		document.body.className = 'dark-theme';
-	} else {
-		document.container.className = 'light-theme';
-	}
-});
+// document.getElementById('themeToggle').addEventListener('click', function () {
+// 	const currentTheme = document.body.className;
+// 	if (currentTheme === 'light-theme') {
+// 		document.body.className = 'dark-theme';
+// 	} else {
+// 		document.container.className = 'light-theme';
+// 	}
+// });
 
+//меняем тему главной картинки
+document.getElementById('themeToggle').addEventListener('click', function () {
+	let imgChange = document.querySelector('.search__img');
+	if (imgChange.src.match('./style/images/main__cat.jpg')) {
+		imgChange.src = './style/images/main__dog.jpeg'
+	} else {
+		imgChange.src = './style/images/main__cat.jpg'
+	}
+
+})
 
 
 //title animation

@@ -281,6 +281,58 @@ ul {
 .menu__link:hover {
   color: #3657CB;
 }
+.menu__login {
+  transform: translateY(-50%);
+  width: 360px;
+  display: block;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px 20px;
+  background-color: #3657CB;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 0 10px #fff;
+}
+.menu__login.showLogin {
+  transform: translateY(0);
+}
+.menu__login-text {
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.menu__login-input {
+  display: block;
+  background: none;
+  border: none;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  padding: 15px 20px;
+  border-radius: 25px;
+}
+.menu__login input[type=submit] {
+  display: block;
+  background: none;
+  border: none;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  padding: 15px 40px;
+  border-radius: 25px;
+}
+.menu__login input[type=submit]:hover {
+  background-color: #fff;
+  color: #1b2d5d;
+  cursor: pointer;
+}
 
 .registration {
   height: 100vh;
@@ -369,11 +421,13 @@ ul {
   margin: 0 auto 50px;
 }
 .search__result {
-  margin: 0px auto 100px;
+  margin: 20px auto 100px;
+  display: flex;
+  justify-content: center;
 }
 .search__img {
-  display: block;
-  max-width: 1400px;
+  max-height: 80vh;
+  max-width: 1200px;
   width: 100%;
 }
 .search__btn {

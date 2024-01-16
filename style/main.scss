@@ -146,6 +146,65 @@ ul {
          color: $maincolor;
       }
    }
+
+   &__login {
+      transform: translateY(-50%);
+      width: 360px;
+      // margin: 0 auto;
+      display: block;
+      transition: all .5s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 30px 20px;
+      background-color: $maincolor;
+      text-align: center;
+      border-radius: 5px;
+      color: #fff;
+      box-shadow: 0 0 10px #fff;
+   }
+
+   &__login.showLogin {
+      transform: translateY(0);
+   }
+
+   &__login-text {
+      margin-bottom: 15px;
+      color: #fff;
+      text-transform: uppercase;
+   }
+
+   &__login-input {
+      display: block;
+      background: none;
+      border: none;
+      outline: 0;
+      color: #fff;
+      text-align: center;
+      margin: 20px auto;
+      border: 2px solid #fff;
+      padding: 15px 20px;
+      border-radius: 25px;
+   }
+
+   &__login input[type="submit"] {
+      display: block;
+      background: none;
+      border: none;
+      outline: 0;
+      color: #fff;
+      text-align: center;
+      margin: 20px auto;
+      border: 2px solid #fff;
+      padding: 15px 40px;
+      border-radius: 25px;
+
+      &:hover {
+         background-color: #fff;
+         color: #1b2d5d;
+         cursor: pointer;
+      }
+   }
 }
 
 .registration {
@@ -249,12 +308,14 @@ ul {
    }
 
    &__result {
-      margin: 0px auto 100px;
+      margin: 20px auto 100px;
+      display: flex;
+      justify-content: center;
    }
 
    &__img {
-      display: block;
-      max-width: 1400px;
+      max-height: 80vh;
+      max-width: 1200px;
       width: 100%;
    }
 
