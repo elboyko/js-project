@@ -371,5 +371,5 @@ let month = new Array("января", "февраля", "марта", "апре�
 	"июля", "августа", "сентября", "октября", "ноября", "декабря");
 
 document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
-myDate.style.fontSize = "10pt";
+myDate.style.fontSize = "14pt";
 myDate.style.color = "yellowgreen";

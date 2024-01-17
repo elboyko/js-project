@@ -143,7 +143,11 @@ ul {
       color: $fontcolor;
 
       &:hover {
-         color: $maincolor;
+         color: #F2F60F;
+      }
+
+      &:focus {
+         color: #fff;
       }
    }
 
@@ -198,6 +202,7 @@ ul {
    transform: translateY(-44.5%) scale(0);
    transition: .4s ease-in-out;
 
+
    &__inner {
       display: flex;
       width: 100%;
@@ -235,6 +240,7 @@ ul {
 
 .registration {
    height: 80vh;
+
 
    &__close {
       display: flex;
@@ -373,6 +379,12 @@ ul {
    }
 }
 
+.data {
+   display: flex;
+   justify-content: center;
+   padding-bottom: 25px;
+}
+
 //section search finish
 
 
@@ -446,6 +458,12 @@ body.dark-theme {
    padding-bottom: 15vh;
 }
 
+.chat__bg {
+   padding-top: 30px;
+   background-image: url('../style/images/cinema.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
 
 .form_wrapper {
    display: grid;
@@ -582,6 +600,7 @@ body.dark-theme {
 
 @import url(https://fonts.googleapis.com/css?family=Anton);
 
+
 .animation-container {
    max-width: 1400px;
    padding: 10px 15px;
@@ -592,8 +611,8 @@ body.dark-theme {
 .animation {
    font-family: 'Anton', sans-serif;
    line-height: 1;
-   letter-spacing: -.07em;
-   color: #fff;
+   letter-spacing: .07em;
+   color: rgb(37, 150, 216);
    cursor: pointer;
 }
 
@@ -607,7 +626,7 @@ body.dark-theme {
 
 
    -webkit-transition: all .2s ease-in-out;
-   transition: all .2s cubic-bezier(.190, 1.000, .220, 1.000) 2s;
+   transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2s;
    -webkit-transform: translateX(-1000%);
    -ms-transform: translateX(-1000%);
    transform: translateX(-1000%);
@@ -631,7 +650,7 @@ body.dark-theme {
    text-transform: uppercase;
 
    opacity: 0;
-   color: #fff;
+   color: rgb(189, 215, 41);
 
    filter: alpha(opacity=0);
 }
@@ -639,19 +658,20 @@ body.dark-theme {
 
 
 .break {
-   -webkit-transition: all .3s ease-in-out 1.2s;
+   -webkit-transition: all .3s ease-in-out 1s;
    transition: all .3s ease-in-out 1.2s;
-   letter-spacing: -.07em;
+   letter-spacing: .03em;
 }
 
 .un {
    -webkit-transition: all .3s ease-in-out 1s;
-   transition: all .3s ease-in-out 1s;
-   letter-spacing: .07em;
+   transition: all .3s ease-in-out 2s;
+   letter-spacing: .03em;
 }
 
 .animate .un {
    font-size: 60px;
+   color: rgb(58, 197, 243);
 
    -webkit-transform: scale(1.5, 1.5);
    -ms-transform: scale(1.5, 1.5);
@@ -717,8 +737,8 @@ h2 {
    max-width: 300px;
    width: 100%;
    margin-bottom: 5px;
-    max-height: 450px;
-    height: 100%;
+   max-height: 450px;
+   height: 100%;
 
 }
 
@@ -741,6 +761,11 @@ h2 {
 
    &__rights {
       padding-bottom: 15px;
+   }
+
+   &__up {
+      display: block;
+      padding-bottom: 30px;
    }
 }
 
@@ -879,12 +904,6 @@ h2 {
          display: none;
       }
    }
-
-   // .animate .ks {
-   //    -webkit-transform: translateX(-100%);
-   //    -ms-transform: translateX(-100%);
-   //    transform: translateX(-100%);
-   // }
 }
 
 @media (max-width:680px) {
@@ -963,5 +982,3 @@ h2 {
       }
    }
 }
-
-
