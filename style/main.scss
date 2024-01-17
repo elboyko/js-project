@@ -126,7 +126,7 @@ ul {
 
    &__list {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
 
    }
 
@@ -145,27 +145,6 @@ ul {
       &:hover {
          color: $maincolor;
       }
-   }
-
-   &__login {
-      transform: translateY(-50%);
-      width: 360px;
-      // margin: 0 auto;
-      display: block;
-      transition: all .5s ease;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 30px 20px;
-      background-color: $maincolor;
-      text-align: center;
-      border-radius: 5px;
-      color: #fff;
-      box-shadow: 0 0 10px #fff;
-   }
-
-   &__login.showLogin {
-      transform: translateY(0);
    }
 
    &__login-text {
@@ -207,9 +186,55 @@ ul {
    }
 }
 
+.popup {
+   // display: none;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   left: 0;
+   top: 0;
+   background-color: transparent;
+   z-index: 10;
+   transform: translateY(-44.5%) scale(0);
+   transition: .4s ease-in-out;
+
+   &__inner {
+      display: flex;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__container {
+      max-width: 360px;
+      margin: auto;
+      padding: 50px 20px 30px;
+      background-color: $maincolor;
+      text-align: center;
+      border-radius: 5px;
+      color: #fff;
+      box-shadow: 0 0 10px #fff;
+      transition: all .5s ease;
+      position: relative;
+   }
+
+   &__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 204pz;
+      cursor: pointer;
+   }
+
+}
+
+.popup.activ {
+   // display: block;
+   transform: translateY(0%)scale(100%);
+   background-color: rgba(0, 0, 0, 0.80);
+}
+
 .registration {
-   height: 100vh;
-   order: 100;
+   height: 80vh;
 
    &__close {
       display: flex;
@@ -220,7 +245,7 @@ ul {
 
    &__title {
       color: $fontcolor;
-      font-size: 40px;
+      font-size: 30px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
@@ -239,7 +264,7 @@ ul {
    &__form-input {
       max-width: 422px;
       width: 100%;
-      height: 50px;
+      height: 40px;
       padding: 10px 20px 10px 16px;
       margin: 0 auto;
       border-radius: 10px;
@@ -254,10 +279,10 @@ ul {
       background: #F2F60F;
       max-width: 422px;
       width: 100%;
-      padding: 13px 20px 14px;
+      padding: 10px 20px 10px;
       border: none;
       color: #1b2d5d;
-      font-size: 25px;
+      font-size: 20px;
    }
 }
 
@@ -265,7 +290,7 @@ ul {
    background-color: #1E2538;
    border-radius: 10px;
    max-width: 800px;
-   padding: 40px 20px 50px 20px;
+   padding: 20px 20px 50px 20px;
    margin: 0 auto;
 
 }
@@ -361,6 +386,8 @@ ul {
 
 .error {
    color: red;
+   font-size: 14px;
+   font-weight: 400;
    margin: 0 0 10px 10px;
 }
 
@@ -368,9 +395,9 @@ ul {
 
 //переключатель темы
 button#themeToggle {
-   width: 5vw;
-   height: 5vh;
-   font-size: 10px;
+   width: 50px;
+   height: 50px;
+   font-size: 12px;
    cursor: pointer;
    text-align: center;
    text-decoration: none;
@@ -378,7 +405,7 @@ button#themeToggle {
    color: $color;
    background-color: greenyellow;
    border: none;
-   border-radius: 15px;
+   border-radius: 50%;
    box-shadow: 0 6px #999;
 }
 
@@ -388,7 +415,7 @@ button#themeToggle:hover {
 
 button#themeToggle:active {
    background-color: green;
-   box-shadow: 0 2px #666;
+   box-shadow: 0 2px #667;
    transform: translateY(2px);
 }
 
@@ -442,7 +469,7 @@ body.dark-theme {
    border-color: darkslateblue;
    border-style: 1rem solid;
    color: $fontcolor;
-   
+
 }
 
 .input {
@@ -496,12 +523,12 @@ body.dark-theme {
    grid-template-rows: 25% 25% 20% 20% 10%;
    text-align: center;
    align-items: center;
-   background: rgb(238, 190, 131); 
+   background: rgb(238, 190, 131);
    border-radius: 1em;
 }
 
 ::placeholder {
-  color: rgb(238, 190, 131);
+   color: rgb(238, 190, 131);
 }
 
 .comment__date {
@@ -558,6 +585,7 @@ body.dark-theme {
    max-width: 1400px;
    padding: 10px 15px;
    margin: 0 auto;
+   z-index: 2;
 }
 
 .animation {
@@ -568,12 +596,14 @@ body.dark-theme {
    cursor: pointer;
 }
 
+
 .ks {
    font-family: 'Anton', sans-serif;
    font-size: 45px;
    line-height: 1;
 
    margin-top: 11px;
+
 
    -webkit-transition: all .2s ease-in-out;
    transition: all .2s cubic-bezier(.190, 1.000, .220, 1.000) 2s;
@@ -590,16 +620,17 @@ body.dark-theme {
    -webkit-transform: translateX(0);
    -ms-transform: translateX(0);
    transform: translateX(0);
+
 }
 
-span {
+.animation span {
    font-family: 'Anton', Helvetica, sans-serif;
-   font-size: 40px;
+   // font-size: 40px;
 
    text-transform: uppercase;
 
-   // opacity: 0;
-   // color: #fff;
+   opacity: 0;
+   color: #fff;
 
    filter: alpha(opacity=0);
 }
@@ -615,7 +646,7 @@ span {
 .un {
    -webkit-transition: all .3s ease-in-out 1s;
    transition: all .3s ease-in-out 1s;
-   letter-spacing: -.07em;
+   letter-spacing: .07em;
 }
 
 .animate .un {
@@ -722,6 +753,18 @@ h2 {
 
    .header__link-in {
       padding: 10px 30px;
+   }
+
+   .animation .un {
+      font-size: 40px;
+   }
+
+   .animation .break {
+      font-size: 40px;
+   }
+
+   .ks {
+      font-size: 40px;
    }
 
    .search {
@@ -834,6 +877,12 @@ h2 {
          display: none;
       }
    }
+
+   // .animate .ks {
+   //    -webkit-transform: translateX(-100%);
+   //    -ms-transform: translateX(-100%);
+   //    transform: translateX(-100%);
+   // }
 }
 
 @media (max-width:680px) {
@@ -855,6 +904,18 @@ h2 {
       &__cartoon {
          font-size: 40px;
       }
+   }
+
+   .animation .un {
+      font-size: 30px;
+   }
+
+   .animation .break {
+      font-size: 30px;
+   }
+
+   .ks {
+      font-size: 30px;
    }
 }
 

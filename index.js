@@ -3,30 +3,30 @@ const menuClose = document.querySelector('.menu__close');
 const menuList = document.querySelector('.menu__list');
 const btnIn = document.querySelector('#header-link');
 
+
 menuBtn.addEventListener('click', function () {
 	menuList.classList.add('menu__list--open');
+
 });
 menuClose.addEventListener('click', function () {
 	menuList.classList.remove('menu__list--open');
+
 });
-const loginInput = document.querySelector('#input-in')
-const formLogin = document.querySelector('.menu__login');
-const loginLink = document.querySelector('.menu__link-login');
-loginLink.addEventListener('click', openLogin);
-function openLogin() {
-	formLogin.classList.add('.showLogin');
-	console.log('open');
-}
-loginInput.addEventListener('click', closeLogin);
-function closeLogin() {
-	formLogin.classList.remove('.showLogin');
-	console.log('close');
-}
+
+//popup логин
+const openPopup = document.querySelector('#popup-open');
+const closePopup = document.querySelector('#popup-close');
+const popUp = document.querySelector('#popup');
 
 
+openPopup.addEventListener('click', function (e) {
+	e.preventDefault();
+	popUp.classList.add('activ');
+})
 
-
-
+closePopup.addEventListener('click', function () {
+	popUp.classList.remove('activ');
+})
 
 //вывод на страницу лучших фильмов 2023 года
 async function getResponse() {
@@ -38,17 +38,6 @@ async function getResponse() {
 	console.log(content);
 	//вывод на страницу
 	let list = document.querySelector('.search__film')
-
-
-	//код ниже не работает
-	// 	for (let i; i < content.length; i++) {
-	// 		list.innerHTML += `
-	//       <li class="search__film-post">
-	// <h4 class="search__film-name">${content.docs[i].name}</h4>
-	// <img class="search__film-img" src="${content.docs[i].poster.url}" alt="" >
-
-	// </li>`
-	// 	}
 
 	list.innerHTML += `
 	      <li class="search__film-post">
@@ -76,8 +65,6 @@ async function getResponse() {
  `}
 
 document.querySelector('.search__btn').addEventListener('click', getResponse)
-
-//логин
 
 
 //Блок ЧАТ
@@ -220,16 +207,6 @@ const loadComments = () => {
 
 loadComments();
 
-//переключение темы
-// document.getElementById('themeToggle').addEventListener('click', function () {
-// 	const currentTheme = document.body.className;
-// 	if (currentTheme === 'light-theme') {
-// 		document.body.className = 'dark-theme';
-// 	} else {
-// 		document.container.className = 'light-theme';
-// 	}
-// });
-
 //меняем тему главной картинки
 document.getElementById('themeToggle').addEventListener('click', function () {
 	let imgChange = document.querySelector('.search__img');
@@ -244,7 +221,6 @@ document.getElementById('themeToggle').addEventListener('click', function () {
 
 //title animation
 var hotbod = document.querySelector("body");
-
 
 function doStuff() {
 	hotbod.className += " animate";
