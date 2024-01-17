@@ -126,7 +126,6 @@ ul {
 
    &__list {
       display: flex;
-      // justify-content: space-between;
 
    }
 
@@ -726,8 +725,9 @@ h2 {
    gap: 5px;
 
 }
+
 .hidden {
-  display: none;
+   display: none;
 }
 
 .movie {
