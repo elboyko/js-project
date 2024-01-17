@@ -310,39 +310,42 @@ class Romantic extends Comedy {
 	}
 }
 
+const list = document.getElementById("list");
 const addMovie = () => {
-	data.forEach(item => {
-		const list = document.getElementById("list");
-		const newMovie = document.createElement("div");
-		newMovie.classList.add("movie");
-		list.appendChild(newMovie);
-		const newImage = document.createElement("img");
-		newImage.classList.add("image");
-		const newTitle = document.createElement("h2");
-		newTitle.classList.add("title");
-		const newRating = document.createElement("div");
-		const newDescription = document.createElement("div");
-		newMovie.append(newImage, newTitle, newRating, newDescription);
-		switch (item.type) {
-			case "family-comedy":
-				let newFam = new Family("семейная комедия: ", item.rating, item.title, item.image, item.year);
-				newImage.src = newFam.image;
-				newTitle.textContent = newFam.getInfo();
-				newDescription.textContent = newFam.getYear();
-				newRating.textContent = newFam.getRating();
-				break;
-			case "romantic-comedy":
-				let newRom = new Romantic("романтическая комедия: ", item.rating, item.title, item.image, item.star,);
-				newImage.src = newRom.image;
-				newTitle.textContent = newRom.getInfo();
-				newDescription.textContent = newRom.getStarName();
-				newRating.textContent = newRom.getRating();
-				break;
-
-		}
-	})
+    if (list.innerHTML === "") {
+        data.forEach(item => {
+            const newMovie = document.createElement("div");
+            newMovie.classList.add("movie");
+            const newImage = document.createElement("img");
+            newImage.classList.add("image");
+            const newTitle = document.createElement("h2");
+            newTitle.classList.add("title");
+            const newRating = document.createElement("div");
+            const newDescription = document.createElement("div");
+            newMovie.append(newImage, newTitle, newRating, newDescription);
+            switch (item.type) {
+	case "family-comedy":
+		let newFam = new Family("семейная комедия: ", item.rating, item.title, item.image, item.year);
+		newImage.src = newFam.image;
+		newTitle.textContent = newFam.getInfo();
+		newDescription.textContent = newFam.getYear();
+		newRating.textContent = newFam.getRating();
+		break;
+	case "romantic-comedy":
+		let newRom = new Romantic("романтическая комедия: " , item.rating, item.title, item.image, item.star,);
+		newImage.src = newRom.image;
+		newTitle.textContent = newRom.getInfo();
+		newDescription.textContent = newRom.getStarName();
+		newRating.textContent = newRom.getRating();
+		break;
+}
+            list.appendChild(newMovie);
+        });
+    }
+    list.classList.toggle('hidden');
 };
 document.getElementById('comedy_btn').addEventListener('click', addMovie);
+
 
 //comedysound
 const comedyButton = document.getElementById("animation");
