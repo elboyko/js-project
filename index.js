@@ -142,7 +142,9 @@ let createComment = () => {
 		month: 'short',
 		day: '2-digit',
 	});
+
 	newDate.innerHTML = commentDate;
+
 
 	//создание поля заполнения
 	let newMessage = document.createElement('p');
@@ -257,7 +259,7 @@ const data = [
 		title: "Из 13 в 30",
 		star: "Дженнифер Гарнер",
 		rating: "рейтинг: IMDb 6.1, Кинопоиск 6.9",
-		image: "https://www.themoviedb.org/t/p/original/AwwMj5oHPUzPsONvv57oUusAQ1H.jpg"
+		image: "https://st.kinobase.org/storage/360x534/posters/2020/02/0644ef9e500542bc642b.jpg"
 	},
 	{
 		id: 4,
@@ -265,7 +267,7 @@ const data = [
 		title: "Приключения Паддингтона",
 		year: 2014,
 		rating: "рейтинг: IMDb 7.2, Кинопоиск 7.2",
-		image: "https://upload.wikimedia.org/wikipedia/ru/thumb/6/6b/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%C2%AB%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D0%BE%D0%BD%D0%BE%D0%BA_%D0%9F%D0%B0%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D1%82%D0%BE%D0%BD%C2%BB.jpg/210px-%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%C2%AB%D0%9C%D0%B5%D0%B4%D0%B2%D0%B5%D0%B6%D0%BE%D0%BD%D0%BE%D0%BA_%D0%9F%D0%B0%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D1%82%D0%BE%D0%BD%C2%BB.jpg"
+		image: "https://cdn.ananasposter.ru/image/cache/catalog/poster/film/95/2796-1000x830.jpg"
 	}
 ];
 
@@ -357,3 +359,17 @@ function makeSound() {
 }
 
 comedyButton.onclick = makeSound;
+
+// Date
+
+let d = new Date();
+
+let day = new Array("Воскресенье", "Понедельник", "Вторник",
+	"Среда", "Четверг", "Пятница", "Суббота");
+
+let month = new Array("января", "февраля", "марта", "апреля", "мая", "июня",
+	"июля", "августа", "сентября", "октября", "ноября", "декабря");
+
+document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
+myDate.style.fontSize = "10pt";
+myDate.style.color = "yellowgreen";

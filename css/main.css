@@ -553,7 +553,8 @@ body.dark-theme {
 }
 
 .chat {
-  background-image: url("/style/images/cinema.webp");
+  background: #1E2538;
+  padding-bottom: 15vh;
 }
 
 .form_wrapper {
@@ -758,6 +759,7 @@ body.dark-theme {
 .comedy {
   background: #1E2538;
   height: 100%;
+  padding-bottom: 16vh;
 }
 
 h3 {
@@ -794,6 +796,8 @@ h2 {
   max-width: 300px;
   width: 100%;
   margin-bottom: 5px;
+  max-height: 450px;
+  height: 100%;
 }
 
 .footer {
