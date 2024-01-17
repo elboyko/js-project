@@ -3,13 +3,30 @@ const menuClose = document.querySelector('.menu__close');
 const menuList = document.querySelector('.menu__list');
 const btnIn = document.querySelector('#header-link');
 
+
 menuBtn.addEventListener('click', function () {
 	menuList.classList.add('menu__list--open');
+
 });
 menuClose.addEventListener('click', function () {
 	menuList.classList.remove('menu__list--open');
+
 });
 
+//popup логин
+const openPopup = document.querySelector('#popup-open');
+const closePopup = document.querySelector('#popup-close');
+const popUp = document.querySelector('#popup');
+
+
+openPopup.addEventListener('click', function (e) {
+	e.preventDefault();
+	popUp.classList.add('activ');
+})
+
+closePopup.addEventListener('click', function () {
+	popUp.classList.remove('activ');
+})
 
 //вывод на страницу лучших фильмов 2023 года
 async function getResponse() {
@@ -21,17 +38,6 @@ async function getResponse() {
 	console.log(content);
 	//вывод на страницу
 	let list = document.querySelector('.search__film')
-
-
-	//код ниже не работает
-	// 	for (let i; i < content.length; i++) {
-	// 		list.innerHTML += `
-	//       <li class="search__film-post">
-	// <h4 class="search__film-name">${content.docs[i].name}</h4>
-	// <img class="search__film-img" src="${content.docs[i].poster.url}" alt="" >
-
-	// </li>`
-	// 	}
 
 	list.innerHTML += `
 	      <li class="search__film-post">
@@ -59,7 +65,6 @@ async function getResponse() {
  `}
 
 document.querySelector('.search__btn').addEventListener('click', getResponse)
-
 
 
 //Блок ЧАТ
@@ -137,10 +142,10 @@ let createComment = () => {
 		month: 'short',
 		day: '2-digit',
 	});
-	
+
 	newDate.innerHTML = commentDate;
 
-	
+
 	//создание поля заполнения
 	let newMessage = document.createElement('p');
 	let messageText = message.value;
@@ -204,21 +209,20 @@ const loadComments = () => {
 
 loadComments();
 
-//переключение темы
+//меняем тему главной картинки
 document.getElementById('themeToggle').addEventListener('click', function () {
-	const currentTheme = document.body.className;
-	if (currentTheme === 'light-theme') {
-		document.body.className = 'dark-theme';
+	let imgChange = document.querySelector('.search__img');
+	if (imgChange.src.match('./style/images/main__cat.jpg')) {
+		imgChange.src = './style/images/main__dog.jpeg'
 	} else {
-		document.body.className = 'light-theme';
+		imgChange.src = './style/images/main__cat.jpg'
 	}
-});
 
+})
 
 
 //title animation
 var hotbod = document.querySelector("body");
-
 
 function doStuff() {
 	hotbod.className += " animate";
@@ -354,7 +358,7 @@ function makeSound() {
 	audio.preload = 'auto';
 	audio.src = '/style/images/superhero-theme-7963.mp3';
 	audio.play();
-		
+
 }
 
 comedyButton.onclick = makeSound;
@@ -362,13 +366,13 @@ comedyButton.onclick = makeSound;
 // Date
 
 let d = new Date();
- 
-let day=new Array("Воскресенье","Понедельник","Вторник",
-"Среда","Четверг","Пятница","Суббота");
- 
-let month=new Array("января","февраля","марта","апреля","мая","июня",
-"июля","августа","сентября","октября","ноября","декабря");
- 
-document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
-myDate.style.fontSize = "10pt";
+
+let day = new Array("Воскресенье", "Понедельник", "Вторник",
+	"Среда", "Четверг", "Пятница", "Суббота");
+
+let month = new Array("января", "февраля", "марта", "апреля", "мая", "июня",
+	"июля", "августа", "сентября", "октября", "ноября", "декабря");
+
+document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
+myDate.style.fontSize = "14pt";
 myDate.style.color = "yellowgreen";
