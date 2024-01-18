@@ -29,7 +29,45 @@
                         </button>
                      </li>
                      <li class="menu__item">
-                        <a href="registration.html" class="menu__link">регистрация</a>
+                        <a href="#" id="popup-open2" class="menu__link">регистрация</a>
+                        <div class="popup" id="popup2">
+                           <div class=" popup__inner-registration">
+                              <div class="registration">
+                                 <div class="container-registration">
+                                    <button class="registration__close">
+                                       <a id="link" href="index.html"> <img id="close" src="./style/images/vector.svg"
+                                             alt="close"></a>
+
+                                    </button>
+                                    <div class="registration__inner">
+                                       <h1 class="registration__title">Зарегистрироваться</h1>
+                                       <form name="formOne" action="" class="registration__form" novalidate>
+                                          <input id="firstName" class="registration__form-input" type="text"
+                                             placeholder="Имя" pattern="^[a-zA-ZА-Яа-я]+$" required>
+                                          <span class="error-name error"></span>
+                                          <input id="firstSurname" class="registration__form-input" type="text"
+                                             placeholder="Фамилия" pattern="^[a-zA-ZА-Яа-я]+$" required>
+                                          <span class="error-surname error"></span>
+                                          <input id="login" class="registration__form-input" type="text"
+                                             placeholder="Ваш логин" required>
+                                          <span class="error-login error"></span>
+                                          <input id="firstPassword" class="registration__form-input" type="password"
+                                             placeholder="Ваш пароль" required>
+                                          <span class="error-password error"></span>
+                                          <input id="firstEmail" class="registration__form-input" type="email"
+                                             placeholder="Ваш email" required>
+                                          <span class="error-email error"></span>
+                                          <!-- <input id="firstPhone" class="registration__form-input" type="phone" placeholder="+7(000)-000-00-00">
+               <span class="error-phone error"></span> -->
+                                          <button class="registration__form-btn"
+                                             type="submit">Зарегистрироваться</button>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
                      </li>
                      <li class="menu__item">
                         <a href="#chat" class="menu__link">чат</a>
@@ -41,10 +79,12 @@
                            <div class="popup__inner">
                               <div class="popup__container">
                                  <form action="" class="menu__login">
-                                    <p class="menu__login-text">Логин</p>
-                                    <input type="text" class="menu__login-input" placeholder="Введите имя">
-                                    <input class="menu__login-input" type="password" placeholder="Введите пароль">
-                                    <input id="input-in" type="submit" value="login">
+                                    <p class="popup__login-text">Логин</p>
+                                    <input type="text" class="popup__login-input popup__login" placeholder="Ваш логин">
+                                    <input class="popup__login-input popup__password" type="password"
+                                       placeholder="Ваш пароль">
+                                    <!-- <input id="input-in" type="submit" value="Войти"> -->
+                                    <button class="popup__button" id="popup__btn-in" type="submit">Войти</button>
                                  </form>
                                  <div class="popup__close" id="popup-close">&#10006</div>
                               </div>
@@ -293,9 +333,10 @@
             </a>
          </div>
       </div>
+      <!-- <iframe src="./registration.html" frameborder="0"></iframe> -->
    </footer>
 
-   <script src="/index.js"></script>
+   <script src="./index.js"></script>
 </body>
 
 </html>

@@ -13,6 +13,22 @@ menuClose.addEventListener('click', function () {
 
 });
 
+//попап регистрация
+const openPopup2 = document.querySelector('#popup-open2');
+const closePopup2 = document.querySelector('#popup-close2');
+const popUp2 = document.querySelector('#popup2');
+
+
+openPopup2.addEventListener('click', function (e) {
+	e.preventDefault();
+	popUp2.classList.add('activ');
+})
+
+// closePopup2.addEventListener('click', function () {
+// 	popUp2.classList.remove('activ');
+// })
+
+
 //popup логин
 const openPopup = document.querySelector('#popup-open');
 const closePopup = document.querySelector('#popup-close');
@@ -37,32 +53,13 @@ async function getResponse() {
 	let content = await response.json()
 	console.log(content);
 	//вывод на страницу
-	let list = document.querySelector('.search__film')
-
-	list.innerHTML += `
-	      <li class="search__film-post">
-	<img class="search__film-img" src="${content.docs[0].poster.url}" alt="" >
-	<h4 class="search__film-name">${content.docs[0].name}</h4>
-
-	</li>
-	   <li class="search__film-post">
-	<img class="search__film-img" src="${content.docs[1].poster.url}" alt="" >
-	<h4 class="search__film-name">${content.docs[1].name}</h4>
-	</li>
-
-	</li>
-	   <li class="search__film-post">
-	<img class="search__film-img" src="${content.docs[2].poster.url}" alt="" >
-	<h4 class="search__film-name">${content.docs[2].name}</h4>
-	</li>
-
-	</li>
-	   <li class="search__film-post">
-
-	<img class="search__film-img" src="${content.docs[3].poster.url}" alt="" >
-	<h4 class="search__film-name">${content.docs[3].name}</h4>
-	</li>
- `}
+	let listIn = document.querySelector('.search__film')
+	for (let i = 0; i < content.docs.length; i++) {
+		listIn.innerHTML += `<li class="search__film-post">
+	<img class="search__film-img" src="${content.docs[i].poster.url}" alt="" >
+	<h4 class="search__film-name">${content.docs[i].name}</h4>`
+	}
+}
 
 document.querySelector('.search__btn').addEventListener('click', getResponse)
 
@@ -376,3 +373,246 @@ let month = new Array("января", "февраля", "марта", "апре�
 document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
 myDate.style.fontSize = "14pt";
 myDate.style.color = "yellowgreen";
+
+
+//форма регистрации
+
+const errorName = document.querySelector('.error-name');
+const errorSurname = document.querySelector('.error-surname');
+const errorPassword = document.querySelector('.error-password');
+const errorEmail = document.querySelector('.error-email');
+const errorPhone = document.querySelector('.error-phone');
+const submitBtm = document.querySelector('.registration__form-btn');
+
+
+
+const inputName = document.querySelector('#firstName');
+const inputSurname = document.querySelector('#firstSurname');
+const inputMail = document.querySelector('#firstEmail');
+const inputPassword = document.querySelector('#firstPassword');
+const inputPhone = document.querySelector('#firstPhone');
+const inputLogin = document.querySelector('#login');
+
+//функция проверки поля имени
+function checkValidityName() {
+	let validity = inputName.validity;
+	let reg = /^[a-zA-ZА-Яа-я]+$/;
+	let error = document.querySelector('.error-name');
+	let res = reg.test(inputName.value)
+	if (!res) {
+		inputName.classList.add('red__line');
+		error.textContent = 'Неверный формат';
+	}
+	else if (validity.valueMissing) {
+		inputName.classList.add('red__line');
+		error.textContent = 'Необходимо заполнить поле';
+	}
+	else {
+		inputName.classList.add('green__line');
+		inputName.classList.remove('red__line');
+		error.textContent = '';
+	}
+}
+
+//функция проверки поля Фамилия
+function checkValiditySurname() {
+	let validity = inputSurname.validity;
+	let reg = /^[a-zA-ZА-Яа-я]+$/;
+	let error = document.querySelector('.error-surname');
+	let res = reg.test(inputSurname.value)
+	if (!res) {
+		inputSurname.classList.add('red__line');
+		error.textContent = 'Неверный формат';
+	}
+	else if (validity.valueMissing) {
+		inputSurname.classList.add('red__line');
+		error.textContent = 'Необходимо заполнить поле';
+	}
+	else {
+		inputSurname.classList.add('green__line');
+		inputSurname.classList.remove('red__line');
+		error.textContent = '';
+	}
+}
+//функция проверки поля Логин
+function checkValidityLogin() {
+	let validityLogin = inputLogin.validity;
+	let error = document.querySelector('.error-login');
+	if (validityLogin.valueMissing) {
+
+		inputLogin.classList.add('red__line');
+		error.textContent = 'Необходимо заполнить поле';
+	}
+	else {
+		inputLogin.classList.add('green__line');
+		inputLogin.classList.remove('red__line');
+		error.textContent = '';
+	}
+}
+
+//функция проверки поля Email
+function checkValidityEmail() {
+	let validityMail = inputMail.validity;
+	let error = document.querySelector('.error-email');
+	if (validityMail.valueMissing) {
+
+		inputMail.classList.add('red__line');
+		error.textContent = 'Необходимо заполнить поле';
+	}
+	else {
+		inputMail.classList.add('green__line');
+		inputMail.classList.remove('red__line');
+		error.textContent = '';
+	}
+}
+//функция проверки поля  пароль
+function checkValidityPassword() {
+	let error = document.querySelector('.error-password');
+	if (inputPassword.valueMissing) {
+		inputPassword.classList.add('red__line');
+		error.textContent = 'Необходимо заполнить поле';
+	}
+	else if (
+		inputPassword.value.length < 8
+	) {
+		error.textContent = 'Пароль должен быть не менее 8 символов';
+		inputPassword.classList.add('red__line');
+	} else {
+		inputPassword.classList.add('green__line');
+		inputPassword.classList.remove('red__line');
+		error.textContent = '';
+	}
+}
+
+
+function change(event) {
+	event.preventDefault();
+	checkValidityName();
+	checkValiditySurname();
+	checkValidityPassword();
+	checkValidityEmail();
+	checkValidityLogin();
+
+
+	let isFormValid =
+		inputName.classList.contains('green__line') &&
+		inputMail.classList.contains('green__line') &&
+		inputPassword.classList.contains('green__line') &&
+		inputSurname.classList.contains('green__line') &&
+		inputLogin.classList.contains('green__line');
+
+	if (isFormValid) {
+		let obj = {
+			'userName': `${inputName.value}`,
+			'userSurname': `${inputSurname.value}`,
+			'userPassword': `${inputPassword.value}`,
+			'userEmail': `${inputMail.value}`,
+			'userLogin': `${inputLogin.value}`,
+		}
+
+		localStorage.setItem('user', JSON.stringify(obj));
+		console.log('Объект obj был записан в Local Storage.');
+		// Действия после успешной отправки формы, например, отправка данных.
+		console.log('Форма успешно отправлена');
+		inputName.addEventListener('input', () => {
+			inputName.classList.remove('red__line');
+			document.querySelector('.error-name').textContent = '';
+		});
+
+		inputMail.addEventListener('input', () => {
+			inputMail.classList.remove('red__line');
+			document.querySelector('.error-email').textContent = '';
+		});
+
+		inputPassword.addEventListener('input', () => {
+			inputPassword.classList.remove('red__line');
+			document.querySelector('.error-password').textContent = '';
+		});
+
+		inputSurname.addEventListener('input', () => {
+			inputSurname.classList.remove('red__line');
+			document.querySelector('.error-surname').textContent = '';
+		});
+		inputLogin.addEventListener('input', () => {
+			inputLogin.classList.remove('red__line');
+			document.querySelector('.error-login').textContent = '';
+		});
+
+		console.log('форма прошла проверку');
+		formOne.reset()
+	}
+}
+formOne.addEventListener('submit', change)
+
+
+
+//связать форму регистрации и форму логина
+const popupLogin = document.querySelector('.popup__login');
+const popupPassword = document.querySelector('.popup__password');
+const popupBtnIn = document.querySelector('#popup__btn-in');
+
+// console.log(popupBtnIn);
+popupBtnIn.addEventListener('click', function (e) {
+	e.preventDefault();
+
+	let obj1 = {
+		'login': `${popupLogin.value}`,
+		'password': `${popupPassword.value}`,
+	}
+
+	localStorage.setItem('login', JSON.stringify(obj1));
+	popupLogin.value = '';
+	popupPassword.value = '';
+	console.log('hello');
+})
+
+function userResult() {
+	const registr = localStorage.getItem('user');
+	if (registr) {
+		const resultArray = JSON.parse(registr);
+		console.log(resultArray);
+		const userLogin = resultArray.userPassword;
+		console.log(userLogin);
+		// return resultArray;
+	} else { console.log('error'); }
+}
+function loginResult() {
+	const login = localStorage.getItem('login');
+	if (login) {
+		const resultLogin = JSON.parse(login);
+		const loginPassword = resultLogin.password
+		console.log(loginPassword);
+		return resultLogin
+	} else { console.log('error'); }
+}
+
+
+const popupClose = document.querySelector('.popup__close');
+popupClose.addEventListener('click', res)
+
+
+function res() {
+	const registr = localStorage.getItem('user');
+	if (registr) {
+		const resultArray = JSON.parse(registr);
+		console.log(resultArray);
+		let userPassword = resultArray.userPassword;
+		console.log(userPassword);
+		// return resultArray;
+	} else { console.log('error'); }
+
+	const login = localStorage.getItem('login');
+	if (login) {
+		const resultLogin = JSON.parse(login);
+		let loginPassword = resultLogin.password
+		console.log(loginPassword);
+		// return resultLogin
+	} else { console.log('error'); }
+
+
+	if (userPassword === loginPassword) {
+		console.log('успех')
+	}
+	else { console.log('нет результата'); }
+
+}

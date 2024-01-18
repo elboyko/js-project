@@ -142,31 +142,12 @@ ul {
       color: $fontcolor;
 
       &:hover {
-         color: #F2F60F;
+         color: $yellowgreencolor;
       }
 
       &:focus {
          color: #fff;
       }
-   }
-
-   &__login-text {
-      margin-bottom: 15px;
-      color: #fff;
-      text-transform: uppercase;
-   }
-
-   &__login-input {
-      display: block;
-      background: none;
-      border: none;
-      outline: 0;
-      color: #fff;
-      text-align: center;
-      margin: 20px auto;
-      border: 2px solid #fff;
-      padding: 15px 20px;
-      border-radius: 25px;
    }
 
    &__login input[type="submit"] {
@@ -208,6 +189,12 @@ ul {
       height: 100%;
    }
 
+   &__inner-registration {
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+   }
+
    &__container {
       max-width: 360px;
       margin: auto;
@@ -219,6 +206,44 @@ ul {
       box-shadow: 0 0 10px #fff;
       transition: all .5s ease;
       position: relative;
+   }
+
+   &__login-input {
+      display: block;
+      background: none;
+      border: none;
+      outline: 0;
+      color: #fff;
+      text-align: center;
+      margin: 20px auto;
+      border: 2px solid #fff;
+      padding: 15px 20px;
+      border-radius: 25px;
+   }
+
+   &__login-text {
+      margin-bottom: 15px;
+      color: #fff;
+      text-transform: uppercase;
+   }
+
+   &__button {
+      display: block;
+      background: none;
+      border: none;
+      outline: 0;
+      color: #fff;
+      text-align: center;
+      margin: 20px auto;
+      border: 2px solid #fff;
+      padding: 15px 40px;
+      border-radius: 25px;
+
+      &:hover {
+         background-color: $yellowgreencolor;
+         color: #1b2d5d;
+         cursor: pointer;
+      }
    }
 
    &__close {
@@ -238,7 +263,10 @@ ul {
 }
 
 .registration {
-   height: 80vh;
+   display: flex;
+   justify-content: center;
+   // height: 80vh;
+   // display
 
 
    &__close {
@@ -281,7 +309,7 @@ ul {
    &__form-btn {
       margin: 0 auto;
       border-radius: 10px;
-      background: #F2F60F;
+      background: $yellowgreencolor;
       max-width: 422px;
       width: 100%;
       padding: 10px 20px 10px;
@@ -292,6 +320,7 @@ ul {
 }
 
 .container-registration {
+
    background-color: #1E2538;
    border-radius: 10px;
    max-width: 800px;
@@ -319,7 +348,7 @@ ul {
 
    &__cartoon {
       font-size: 50px;
-      color: #F2F60F;
+      color: $yellowgreencolor;
       margin-bottom: 50px;
       padding-top: 50px;
    }
@@ -365,7 +394,7 @@ ul {
 
    &__film-name {
       font-size: 20px;
-      color: #F2F60F;
+      color: $yellowgreencolor;
       margin-top: 10px;
       margin-bottom: 10px;
    }
@@ -414,7 +443,7 @@ button#themeToggle {
    text-decoration: none;
    outline: none;
    color: $color;
-   background-color: greenyellow;
+   background-color: $yellowgreencolor;
    border: none;
    border-radius: 50%;
    box-shadow: 0 6px #999;

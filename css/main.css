@@ -278,27 +278,10 @@ ul {
   color: white;
 }
 .menu__link:hover {
-  color: #F2F60F;
+  color: yellowgreen;
 }
 .menu__link:focus {
   color: #fff;
-}
-.menu__login-text {
-  margin-bottom: 15px;
-  color: #fff;
-  text-transform: uppercase;
-}
-.menu__login-input {
-  display: block;
-  background: none;
-  border: none;
-  outline: 0;
-  color: #fff;
-  text-align: center;
-  margin: 20px auto;
-  border: 2px solid #fff;
-  padding: 15px 20px;
-  border-radius: 25px;
 }
 .menu__login input[type=submit] {
   display: block;
@@ -334,6 +317,11 @@ ul {
   width: 100%;
   height: 100%;
 }
+.popup__inner-registration {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
 .popup__container {
   max-width: 360px;
   margin: auto;
@@ -345,6 +333,40 @@ ul {
   box-shadow: 0 0 10px #fff;
   transition: all 0.5s ease;
   position: relative;
+}
+.popup__login-input {
+  display: block;
+  background: none;
+  border: none;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  padding: 15px 20px;
+  border-radius: 25px;
+}
+.popup__login-text {
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.popup__button {
+  display: block;
+  background: none;
+  border: none;
+  outline: 0;
+  color: #fff;
+  text-align: center;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  padding: 15px 40px;
+  border-radius: 25px;
+}
+.popup__button:hover {
+  background-color: yellowgreen;
+  color: #1b2d5d;
+  cursor: pointer;
 }
 .popup__close {
   position: absolute;
@@ -360,7 +382,8 @@ ul {
 }
 
 .registration {
-  height: 80vh;
+  display: flex;
+  justify-content: center;
 }
 .registration__close {
   display: flex;
@@ -397,7 +420,7 @@ ul {
 .registration__form-btn {
   margin: 0 auto;
   border-radius: 10px;
-  background: #F2F60F;
+  background: yellowgreen;
   max-width: 422px;
   width: 100%;
   padding: 10px 20px 10px;
@@ -429,7 +452,7 @@ ul {
 }
 .search__cartoon {
   font-size: 50px;
-  color: #F2F60F;
+  color: yellowgreen;
   margin-bottom: 50px;
   padding-top: 50px;
 }
@@ -485,7 +508,7 @@ ul {
 }
 .search__film-name {
   font-size: 20px;
-  color: #F2F60F;
+  color: yellowgreen;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -525,7 +548,7 @@ button#themeToggle {
   text-decoration: none;
   outline: none;
   color: #1E2538;
-  background-color: greenyellow;
+  background-color: yellowgreen;
   border: none;
   border-radius: 50%;
   box-shadow: 0 6px #999;
