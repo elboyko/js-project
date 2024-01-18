@@ -550,12 +550,12 @@ formOne.addEventListener('submit', change)
 
 
 //связать форму регистрации и форму логина
-
+let popupClose = document.querySelector('.popup')
 const popupBtnIn = document.querySelector('#popup__btn-in');
 // console.log(popupBtnIn);
 let popupLogin = document.querySelector('.popup__login');
 let popupPassword = document.querySelector('.popup__password');
-popupBtnIn.addEventListener('submit', function (e) {
+popupBtnIn.addEventListener('click', function (e) {
 	e.preventDefault();
 
 
@@ -565,74 +565,22 @@ popupBtnIn.addEventListener('submit', function (e) {
 
 	}
 
-
 	localStorage.setItem('login', JSON.stringify(obj1));
-
 	const getPass = localStorage.getItem('userPass');
+	console.log(getPass);
 	const getLogin = localStorage.getItem('userLogin');
-	if (popupLogin.value === getLogin && popupPassword.value === getPass) {
+	if (popupLogin.value == getLogin && popupPassword.value == getPass) {
 		console.log('успешная авторизация');
+		alert(`Добро пожаловать,${popupLogin.value}`);
+		popUp.style.display = 'none';
 	} else {
 		console.log('неуспешная авторизация');
+		alert('неуспешная авторизация')
 	}
-
-
-
 	popupLogin.value = '';
 	popupPassword.value = '';
 	console.log('hello');
 })
-
-function userResult() {
-	const registr = localStorage.getItem('user');
-	if (registr) {
-		const resultArray = JSON.parse(registr);
-		console.log(resultArray);
-		const userLogin = resultArray.userPassword;
-		console.log(userLogin);
-		// return resultArray;
-	} else { console.log('error'); }
-}
-function loginResult() {
-	const login = localStorage.getItem('login');
-	if (login) {
-		const resultLogin = JSON.parse(login);
-		const loginPassword = resultLogin.password
-		console.log(loginPassword);
-		return resultLogin
-	} else { console.log('error'); }
-}
-
-
-const popupClose = document.querySelector('.popup__close');
-popupClose.addEventListener('click', res)
-
-
-function res() {
-	const registr = localStorage.getItem('user');
-	if (registr) {
-		const resultArray = JSON.parse(registr);
-		console.log(resultArray);
-		let userPassword = resultArray.userPassword;
-		console.log(userPassword);
-		// return resultArray;
-	} else { console.log('error'); }
-
-	const login = localStorage.getItem('login');
-	if (login) {
-		const resultLogin = JSON.parse(login);
-		let loginPassword = resultLogin.password
-		console.log(loginPassword);
-		// return resultLogin
-	} else { console.log('error'); }
-
-
-	// if (userPassword === loginPassword) {
-	// 	console.log('успех')
-	// }
-	// else { console.log('нет результата'); }
-
-}
 
 
 // Game of Thrones quotations
