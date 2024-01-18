@@ -615,7 +615,7 @@ body.dark-theme {
    cursor: pointer;
 }
 
-
+/*
 .ks {
    font-family: 'Anton', sans-serif;
    font-size: 45px;
@@ -632,13 +632,15 @@ body.dark-theme {
    letter-spacing: -1px;
    text-transform: uppercase;
 
-   color: #fc0;
+   color: orange;
 }
-
+*/
 .animate .ks {
    -webkit-transform: translateX(0);
    -ms-transform: translateX(0);
    transform: translateX(0);
+    letter-spacing: -1px;
+   text-transform: uppercase;
 
 }
 
@@ -649,22 +651,20 @@ body.dark-theme {
    text-transform: uppercase;
 
    opacity: 0;
-   color: rgb(189, 215, 41);
+   color: yellowgreen;
 
    filter: alpha(opacity=0);
 }
 
 
-
-.break {
-   -webkit-transition: all .3s ease-in-out 1s;
-   transition: all .3s ease-in-out 1.2s;
-   letter-spacing: .03em;
-}
-
 .un {
    -webkit-transition: all .3s ease-in-out 1s;
    transition: all .3s ease-in-out 2s;
+   letter-spacing: .03em;
+}
+.break {
+   -webkit-transition: all .3s ease-in-out 1s;
+   transition: all .3s ease-in-out 1.2s;
    letter-spacing: .03em;
 }
 
@@ -684,9 +684,9 @@ body.dark-theme {
 .animate .break {
    font-size: 60px;
 
-   -webkit-transform: scale(1, 1);
-   -ms-transform: scale(1, 1);
-   transform: scale(1, 1);
+   -webkit-transform: scale(1.5, 1.5);
+   -ms-transform: scale(1.5, 1.5);
+   transform: scale(1.5, 1.5);
 
    opacity: 1;
 
@@ -710,8 +710,8 @@ h3 {
    text-align: center;
 }
 
-h2 {
-   color: hsl(61, 93%, 51%);
+.h2#chat-title {
+   color: yellow;
    font-size: 1.2em;
    font-style: bold;
    padding-bottom: 5px;
@@ -806,6 +806,7 @@ h2 {
          margin-right: 50px;
       }
    }
+
 }
 
 @media (max-width:768px) {
@@ -985,3 +986,60 @@ h2 {
       }
    }
 }
+
+// game of Thrones
+
+.game {
+    display: flex;
+    flex-direction: column;
+    background-color: $color;
+   
+   }
+
+    .game__bg {
+      max-width: 1400px;
+   padding-top: 30px;
+   background-image: url('/style/images/igra_prestolov.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+        .h4 {
+            margin: 0 auto;
+            font-size: 40px;
+   color: yellow;
+   padding: 35px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+            
+        }
+
+        #news {
+            width: 60vw;
+            margin: 0 auto;
+        }
+
+        .post {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color:black;
+            text-align: center;
+            margin: 6vw;
+        }
+
+
+
+        .post-title {
+            text-transform: uppercase;
+            margin: 1vw auto;
+        }
+        .post-house {
+            text-transform: uppercase;
+            margin: 1vw auto;
+        }
+        
+        .post-text {
+            margin: 0 auto;
+        }

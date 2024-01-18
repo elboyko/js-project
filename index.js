@@ -376,3 +376,47 @@ let month = new Array("января", "февраля", "марта", "апре�
 document.getElementsByClassName('date')[0].insertAdjacentHTML('afterbegin', '<div id="myDate">' + day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г." + '</div>');
 myDate.style.fontSize = "14pt";
 myDate.style.color = "yellowgreen";
+
+
+// Game of Thrones quotations
+ const news = document.getElementById("thrones");
+
+function addPost(post) {
+    const newPost = document.createElement("div"); 
+	newPost.classList.add("post")                   //блок с содержимым
+    const title = document.createElement("h2"); //element creation
+	title.textContent = `Персонаж: ${post.character.name}`; // name = title
+	title.classList.add("post-title");  // claas add
+	newPost.appendChild(title);
+
+    const postText = document.createElement("p");
+	postText.textContent = `Цитата: "${post.sentence}"`; 
+	postText.classList.add("post-text");
+	newPost.appendChild(postText); 
+
+	
+	const houseText = document.createElement("p");
+	houseText.textContent = `Дом: "${post.character.house.name}"`; 
+	newPost.appendChild(houseText);
+	postText.classList.add("house-text");
+news.appendChild(newPost);
+}
+
+function publishPost() {
+        fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
+        .then((response) => response.json())
+        .then((posts) => {
+            posts.forEach((post) => {
+                addPost(post);
+            });
+        })
+        .catch((error) => {
+            console.error("Ошибка", error);
+        });
+}
+
+
+document.getElementById('game_btn').addEventListener('click', publishPost);
+
+
+
