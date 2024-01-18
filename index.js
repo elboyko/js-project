@@ -204,7 +204,7 @@ const loadComments = () => {
 
 loadComments();
 
-//меняем тему главной картинки
+/*меняем тему главной картинки
 document.getElementById('themeToggle').addEventListener('click', function () {
 	let imgChange = document.querySelector('.search__img');
 	if (imgChange.src.match('./style/images/main__cat.jpg')) {
@@ -213,7 +213,27 @@ document.getElementById('themeToggle').addEventListener('click', function () {
 		imgChange.src = './style/images/main__cat.jpg'
 	}
 
-})
+})*/
+// gallery
+const imgLinks = [
+  	'/style/images/main__cat.jpg',
+			'/style/images/marvel.webp',
+			'/style/images/main__dog.jpeg',
+			'/style/images/Jumanji.jpg',
+			'/style/images/Harry.jpeg',
+			'/style/images/Godzilla.jpg',
+	'/style/images/Armageddon.webp',
+			'/style/images/Alaska.jpg',
+];
+const delay = 5000;
+let currentIndex = 0;
+setInterval(function() {
+    document.getElementById('image').src = imgLinks[currentIndex];
+    currentIndex++;
+    if(currentIndex >= imgLinks.length) {
+        currentIndex = 0;
+    }
+}, delay);
 
 
 //title animation
@@ -623,18 +643,18 @@ function addPost(post) {
     const newPost = document.createElement("div"); 
 	newPost.classList.add("post")                   //блок с содержимым
     const title = document.createElement("h2"); //element creation
-	title.textContent = `Персонаж: ${post.character.name}`; // name = title
+	title.textContent = `Как сказал известный персонаж - ${post.character.name}:`; // name = title
 	title.classList.add("post-title");  // claas add
 	newPost.appendChild(title);
 
     const postText = document.createElement("p");
-	postText.textContent = `Цитата: "${post.sentence}"`; 
+	postText.textContent = `"${post.sentence}(с)"`; 
 	postText.classList.add("post-text");
 	newPost.appendChild(postText); 
 
 	
 	const houseText = document.createElement("p");
-	houseText.textContent = `Дом: "${post.character.house.name}"`; 
+	houseText.textContent = `И как известно, он принадлежит к ${post.character.house.name}`; 
 	newPost.appendChild(houseText);
 	postText.classList.add("house-text");
 news.appendChild(newPost);

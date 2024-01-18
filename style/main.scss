@@ -36,7 +36,7 @@ ul {
 
 .header {
    padding: 50px 0;
-   background-color: #1E2538;
+   background-image: url(/style/images/cinema.webp);
 
    &__logo {
       display: flex;
@@ -362,7 +362,7 @@ ul {
       text-align: center;
       font-size: 40px;
       font-weight: 900;
-      color: rgb(58, 197, 243);
+      color: white;
       margin: 0 auto 50px;
    }
 
@@ -640,7 +640,7 @@ body.dark-theme {
    font-family: 'Anton', sans-serif;
    line-height: 1;
    letter-spacing: .07em;
-   color: rgb(37, 150, 216);
+   color: white;
    cursor: pointer;
 }
 
@@ -699,7 +699,7 @@ body.dark-theme {
 
 .animate .un {
    font-size: 60px;
-   color: rgb(58, 197, 243);
+   color: white;
 
    -webkit-transform: scale(1.5, 1.5);
    -ms-transform: scale(1.5, 1.5);
@@ -732,7 +732,7 @@ body.dark-theme {
 
 h3 {
    font-size: 40px;
-   color: rgb(58, 197, 243);
+   color: white;
    padding: 35px;
    justify-content: center;
    align-items: center;
@@ -1072,3 +1072,19 @@ h3 {
         .post-text {
             margin: 0 auto;
         }
+
+
+        //gallery
+
+#image {
+height: 80vh;
+      max-width: 1200px;
+      width: 100%;
+  animation: fade 5s linear infinite;
+  animation-delay: 2.5s;
+}
+@keyframes fade {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
