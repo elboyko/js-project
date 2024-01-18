@@ -360,6 +360,7 @@ const addMovie = () => {
 			}
 			list.appendChild(newMovie);
 		});
+
 	}
 	list.classList.toggle('hidden');
 };
@@ -529,6 +530,10 @@ function change(event) {
 		}
 
 		localStorage.setItem('user', JSON.stringify(obj));
+
+		localStorage.setItem('userPass', inputPassword.value);//!
+		localStorage.setItem('userLogin', inputLogin.value);//!
+
 		console.log('Объект obj был записан в Local Storage.');
 		// Действия после успешной отправки формы, например, отправка данных.
 		console.log('Форма успешно отправлена');
@@ -565,79 +570,41 @@ formOne.addEventListener('submit', change)
 
 
 //связать форму регистрации и форму логина
-const popupLogin = document.querySelector('.popup__login');
-const popupPassword = document.querySelector('.popup__password');
+let popupClose = document.querySelector('.popup')
 const popupBtnIn = document.querySelector('#popup__btn-in');
-
 // console.log(popupBtnIn);
+let popupLogin = document.querySelector('.popup__login');
+let popupPassword = document.querySelector('.popup__password');
 popupBtnIn.addEventListener('click', function (e) {
 	e.preventDefault();
+
 
 	let obj1 = {
 		'login': `${popupLogin.value}`,
 		'password': `${popupPassword.value}`,
+
 	}
 
 	localStorage.setItem('login', JSON.stringify(obj1));
+	const getPass = localStorage.getItem('userPass');
+	console.log(getPass);
+	const getLogin = localStorage.getItem('userLogin');
+	if (popupLogin.value == getLogin && popupPassword.value == getPass) {
+		console.log('успешная авторизация');
+		alert(`Добро пожаловать,${popupLogin.value}`);
+		popUp.style.display = 'none';
+	} else {
+		console.log('неуспешная авторизация');
+		alert('неуспешная авторизация')
+	}
 	popupLogin.value = '';
 	popupPassword.value = '';
 	console.log('hello');
 })
 
-function userResult() {
-	const registr = localStorage.getItem('user');
-	if (registr) {
-		const resultArray = JSON.parse(registr);
-		console.log(resultArray);
-		const userLogin = resultArray.userPassword;
-		console.log(userLogin);
-		// return resultArray;
-	} else { console.log('error'); }
-}
-function loginResult() {
-	const login = localStorage.getItem('login');
-	if (login) {
-		const resultLogin = JSON.parse(login);
-		const loginPassword = resultLogin.password
-		console.log(loginPassword);
-		return resultLogin
-	} else { console.log('error'); }
-}
-
-
-const popupClose = document.querySelector('.popup__close');
-popupClose.addEventListener('click', res)
-
-
-function res() {
-	const registr = localStorage.getItem('user');
-	if (registr) {
-		const resultArray = JSON.parse(registr);
-		console.log(resultArray);
-		let userPassword = resultArray.userPassword;
-		console.log(userPassword);
-		// return resultArray;
-	} else { console.log('error'); }
-
-	const login = localStorage.getItem('login');
-	if (login) {
-		const resultLogin = JSON.parse(login);
-		let loginPassword = resultLogin.password
-		console.log(loginPassword);
-		// return resultLogin
-	} else { console.log('error'); }
-
-
-	// if (userPassword === loginPassword) {
-	// 	console.log('успех')
-	// }
-	// else { console.log('нет результата'); }
-
-}
-
 
 // Game of Thrones quotations
- const news = document.getElementById("thrones");
+const news = document.getElementById("thrones");
 
 function addPost(post) {
     const newPost = document.createElement("div"); 
@@ -661,16 +628,16 @@ news.appendChild(newPost);
 }
 
 function publishPost() {
-        fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
-        .then((response) => response.json())
-        .then((posts) => {
-            posts.forEach((post) => {
-                addPost(post);
-            });
-        })
-        .catch((error) => {
-            console.error("Ошибка", error);
-        });
+	fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
+		.then((response) => response.json())
+		.then((posts) => {
+			posts.forEach((post) => {
+				addPost(post);
+			});
+		})
+		.catch((error) => {
+			console.error("Ошибка", error);
+		});
 }
 
 
