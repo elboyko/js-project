@@ -24,10 +24,6 @@ openPopup2.addEventListener('click', function (e) {
 	popUp2.classList.add('activ');
 })
 
-// closePopup2.addEventListener('click', function () {
-// 	popUp2.classList.remove('activ');
-// })
-
 
 //popup логин
 const openPopup = document.querySelector('#popup-open');
@@ -43,6 +39,8 @@ openPopup.addEventListener('click', function (e) {
 closePopup.addEventListener('click', function () {
 	popUp.classList.remove('activ');
 })
+
+
 
 //вывод на страницу лучших фильмов 2023 года
 async function getResponse() {
@@ -610,9 +608,9 @@ function res() {
 	} else { console.log('error'); }
 
 
-	if (userPassword === loginPassword) {
-		console.log('успех')
-	}
-	else { console.log('нет результата'); }
+	// if (userPassword === loginPassword) {
+	// 	console.log('успех')
+	// }
+	// else { console.log('нет результата'); }
 
 }
