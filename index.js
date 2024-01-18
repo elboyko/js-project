@@ -340,6 +340,7 @@ const addMovie = () => {
 			}
 			list.appendChild(newMovie);
 		});
+
 	}
 	list.classList.toggle('hidden');
 };
@@ -509,6 +510,10 @@ function change(event) {
 		}
 
 		localStorage.setItem('user', JSON.stringify(obj));
+
+		localStorage.setItem('userPass', inputPassword.value);//!
+		localStorage.setItem('userLogin', inputLogin.value);//!
+
 		console.log('Объект obj был записан в Local Storage.');
 		// Действия после успешной отправки формы, например, отправка данных.
 		console.log('Форма успешно отправлена');
@@ -545,20 +550,34 @@ formOne.addEventListener('submit', change)
 
 
 //связать форму регистрации и форму логина
-const popupLogin = document.querySelector('.popup__login');
-const popupPassword = document.querySelector('.popup__password');
-const popupBtnIn = document.querySelector('#popup__btn-in');
 
+const popupBtnIn = document.querySelector('#popup__btn-in');
 // console.log(popupBtnIn);
-popupBtnIn.addEventListener('click', function (e) {
+let popupLogin = document.querySelector('.popup__login');
+let popupPassword = document.querySelector('.popup__password');
+popupBtnIn.addEventListener('submit', function (e) {
 	e.preventDefault();
+
 
 	let obj1 = {
 		'login': `${popupLogin.value}`,
 		'password': `${popupPassword.value}`,
+
 	}
 
+
 	localStorage.setItem('login', JSON.stringify(obj1));
+
+	const getPass = localStorage.getItem('userPass');
+	const getLogin = localStorage.getItem('userLogin');
+	if (popupLogin.value === getLogin && popupPassword.value === getPass) {
+		console.log('успешная авторизация');
+	} else {
+		console.log('неуспешная авторизация');
+	}
+
+
+
 	popupLogin.value = '';
 	popupPassword.value = '';
 	console.log('hello');
@@ -614,3 +633,6 @@ function res() {
 	// else { console.log('нет результата'); }
 
 }
+
+
+//получаю значения из формы регистрации
