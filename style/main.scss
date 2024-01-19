@@ -68,12 +68,12 @@ ul {
 
 
       path {
-         fill: $maincolor;
+         fill: $fontcolor;
       }
 
       &:hover {
          path {
-            fill: $fontcolor;
+            fill: $maincolor;
          }
       }
    }
@@ -140,6 +140,7 @@ ul {
    &__link {
       text-decoration: none;
       color: $fontcolor;
+      font-size: 20px;
 
       &:hover {
          color: $yellowgreencolor;
@@ -265,8 +266,7 @@ ul {
 .registration {
    display: flex;
    justify-content: center;
-   // height: 80vh;
-   // display
+
 
 
    &__close {
@@ -388,8 +388,12 @@ ul {
    &__film {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       padding-top: 40px;
+   }
+
+   &__film-post {
+      width: 320px;
    }
 
    &__film-name {
@@ -402,7 +406,7 @@ ul {
    &__film-img {
       margin-right: 20px;
       margin-bottom: 10px;
-      max-width: 300px;
+      width: 300px;
 
    }
 }
@@ -410,7 +414,7 @@ ul {
 .data {
    display: flex;
    justify-content: center;
-   padding-bottom: 25px;
+   padding: 25px 0;
 }
 
 //section search finish
@@ -495,7 +499,7 @@ body.dark-theme {
 
 .form_wrapper {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 1fr 2fr;
    padding: 2vw;
 }
 
@@ -513,18 +517,16 @@ body.dark-theme {
    max-width: 80%;
    min-width: 70%;
    max-height: max-content;
-   border-color: darkslateblue;
-   border-style: 1rem solid;
    color: $fontcolor;
-
+   border: 1px solid darkslateblue;
 }
 
 .input {
    padding: 1vw;
-   max-width: 70%;
+   max-width: 100%;
    background: $maincolor;
-   border-color: darkslateblue;
-   border-style: 1rem solid;
+   border: 1px solid darkslateblue;
+
    color: #000000;
    color: $fontcolor;
    border-radius: 1em;
@@ -535,7 +537,7 @@ body.dark-theme {
 .comments {
    display: flex;
    flex-direction: column;
-   width: 45vw;
+   width: 100%;
    height: 55vh;
    gap: 1vh;
    padding: 1vh 3vw;
@@ -668,7 +670,7 @@ body.dark-theme {
    -webkit-transform: translateX(0);
    -ms-transform: translateX(0);
    transform: translateX(0);
-    letter-spacing: -1px;
+   letter-spacing: -1px;
    text-transform: uppercase;
 
 }
@@ -691,6 +693,7 @@ body.dark-theme {
    transition: all .3s ease-in-out 2s;
    letter-spacing: .03em;
 }
+
 .break {
    -webkit-transition: all .3s ease-in-out 1s;
    transition: all .3s ease-in-out 1.2s;
@@ -725,7 +728,7 @@ body.dark-theme {
 //json block Comedy
 .comedy {
    background: $color;
-   height: 100%;
+   // height: 100%;
    padding-bottom: 16vh;
 
 }
@@ -749,8 +752,9 @@ h3 {
 .list {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   grid-template-rows: 1fr;
+   grid-template-rows: auto;
    padding-top: 40px;
+   padding-bottom: 20px;
    gap: 5px;
 
 }
@@ -760,16 +764,16 @@ h3 {
 }
 
 .movie {
-   max-width: 310px;
+   width: 300px;
    width: 100%;
    margin: 0 auto;
 }
 
 .image {
-   max-width: 300px;
+   width: 300px;
    width: 100%;
    margin-bottom: 5px;
-   max-height: 450px;
+   max-height: 420px;
    height: 100%;
 
 }
@@ -802,7 +806,140 @@ h3 {
 }
 
 
+
+
+// game of Thrones
+
+.game {
+   display: flex;
+   flex-direction: column;
+   background-color: $color;
+
+}
+
+.game__bg {
+   // max-width: 1400px;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   background-image: url('/style/images/igra_prestolov.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.h4 {
+   margin: 0 auto;
+   font-size: 40px;
+   color: yellow;
+   padding: 35px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+}
+
+#news {
+   width: 60vw;
+   margin: 0 auto;
+}
+
+.post {
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+   background-color: black;
+   text-align: center;
+   margin: 6vw;
+}
+
+
+
+.post-title {
+   text-transform: uppercase;
+   margin: 1vw auto;
+}
+
+.post-house {
+   text-transform: uppercase;
+   margin: 1vw auto;
+}
+
+.post-text {
+   margin: 0 auto;
+}
+
+
+//gallery
+
+#image {
+   max-width: 1200px;
+   width: 100%;
+   animation: fade 5s linear infinite;
+   animation-delay: 2.5s;
+}
+
+@keyframes fade {
+   0% {
+      opacity: 1
+   }
+
+   50% {
+      opacity: 0
+   }
+
+   100% {
+      opacity: 1
+   }
+}
+
 //медиа запросы
+@media (max-width:1300px) {
+   .comedy {
+      padding-bottom: 80px;
+   }
+
+   .list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      padding-top: 40px;
+      gap: 5px;
+      align-self: center;
+   }
+
+   .movie {
+      width: 100%;
+      text-align: center;
+
+   }
+
+   .image {
+      width: 350px;
+      height: 100%;
+      margin: 15px auto;
+   }
+}
+
+
+@media (max-width:1000px) {
+   .search {
+      &__film {
+         justify-content: space-evenly;
+      }
+
+      &__film-post {
+         width: 430px;
+         height: 80%;
+      }
+
+      &__film-img {
+
+         width: 100%;
+         height: 80%;
+      }
+   }
+}
+
+
+
 @media (max-width:900px) {
    .menu {
       &__item {
@@ -831,11 +968,20 @@ h3 {
          margin: 0px auto 50px;
       }
 
-      &__film-img {
-         margin-right: 50px;
+      &__film-post {
+         width: 345px;
+         height: 80%;
       }
    }
 
+   .image {
+      width: 90%;
+      height: 80%;
+   }
+
+   .comedy {
+      padding-bottom: 50px;
+   }
 }
 
 @media (max-width:768px) {
@@ -845,7 +991,7 @@ h3 {
          justify-content: space-between;
          background-color: $maincolor;
          height: 60px;
-         padding: 30px 80px;
+         padding: 30px 80px 50px;
          border-top: 1px solid grey;
       }
 
@@ -889,7 +1035,7 @@ h3 {
          text-align: center;
          padding-top: 60px;
          transition: all .5s ease;
-
+         z-index: 100;
       }
 
       &__list.menu__list--open {
@@ -937,7 +1083,67 @@ h3 {
          display: none;
       }
    }
+
+   .search {
+      &__film-post {
+         width: 500px;
+         height: 70%;
+
+      }
+
+      &__film-img {
+         display: block;
+         width: 80%;
+         height: 70%;
+         margin: 0 auto;
+      }
+
+      &__film-name {
+         text-align: center;
+         margin-bottom: 20px;
+      }
+   }
+
+   .list {
+      grid-template-columns: 1fr;
+      padding-left: 15px;
+      padding-right: 15px;
+   }
+
+   .image {
+      max-width: 350px;
+      display: block;
+      margin: 20px auto;
+
+   }
+
+   .movie {
+      text-align: center;
+
+   }
+
+   .form_wrapper {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .chat {
+      padding-bottom: 60px;
+   }
+
+   .input {
+      max-width: 450px;
+      width: 100%;
+   }
+
+   .form {
+      padding-bottom: 50px;
+      text-align: center;
+      align-items: center;
+   }
+
 }
+
 
 @media (max-width:680px) {
    .menu__list {
@@ -971,6 +1177,23 @@ h3 {
    .ks {
       font-size: 30px;
    }
+
+   .chat {
+      padding-bottom: 50px;
+   }
+
+   .h4 {
+      padding: 20px;
+      font-size: 30px;
+   }
+
+   .search__title a {
+      font-size: 30px;
+   }
+
+   .comedy__title {
+      font-size: 30px;
+   }
 }
 
 @media (max-width:480px) {
@@ -997,6 +1220,18 @@ h3 {
 
    .search {
       padding-bottom: 10px;
+
+      &__film-post {
+         max-width: 350px;
+      }
+
+      &__film-img {
+         width: 100%;
+      }
+   }
+
+   .image {
+      width: 100%;
    }
 }
 
@@ -1014,77 +1249,10 @@ h3 {
          width: 260px;
       }
    }
-}
 
-// game of Thrones
 
-.game {
-    display: flex;
-    flex-direction: column;
-    background-color: $color;
-   
+
+   .chat {
+      display: none;
    }
-
-    .game__bg {
-      max-width: 1400px;
-   padding-top: 30px;
-   background-image: url('/style/images/igra_prestolov.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-
-        .h4 {
-            margin: 0 auto;
-            font-size: 40px;
-   color: yellow;
-   padding: 35px;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-            
-        }
-
-        #news {
-            width: 60vw;
-            margin: 0 auto;
-        }
-
-        .post {
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-            background-color:black;
-            text-align: center;
-            margin: 6vw;
-        }
-
-
-
-        .post-title {
-            text-transform: uppercase;
-            margin: 1vw auto;
-        }
-        .post-house {
-            text-transform: uppercase;
-            margin: 1vw auto;
-        }
-        
-        .post-text {
-            margin: 0 auto;
-        }
-
-
-        //gallery
-
-#image {
-height: 80vh;
-      max-width: 1200px;
-      width: 100%;
-  animation: fade 5s linear infinite;
-  animation-delay: 2.5s;
-}
-@keyframes fade {
-  0% { opacity: 1 }
-  50% { opacity: 0 }
-  100% { opacity: 1 }
 }

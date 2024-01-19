@@ -204,35 +204,26 @@ const loadComments = () => {
 
 loadComments();
 
-/*меняем тему главной картинки
-document.getElementById('themeToggle').addEventListener('click', function () {
-	let imgChange = document.querySelector('.search__img');
-	if (imgChange.src.match('./style/images/main__cat.jpg')) {
-		imgChange.src = './style/images/main__dog.jpeg'
-	} else {
-		imgChange.src = './style/images/main__cat.jpg'
-	}
 
-})*/
 // gallery
 const imgLinks = [
-  	'/style/images/main__cat.jpg',
-			'/style/images/marvel.webp',
-			'/style/images/main__dog.jpeg',
-			'/style/images/Jumanji.jpg',
-			'/style/images/Harry.jpeg',
-			'/style/images/Godzilla.jpg',
+	'/style/images/main__cat.jpg',
+	'/style/images/marvel.webp',
+	'/style/images/main__dog.jpeg',
+	'/style/images/Jumanji.jpg',
+	'/style/images/Harry.jpeg',
+	'/style/images/Godzilla.jpg',
 	'/style/images/Armageddon.webp',
-			'/style/images/Alaska.jpg',
+	'/style/images/Alaska.jpg',
 ];
 const delay = 5000;
 let currentIndex = 0;
-setInterval(function() {
-    document.getElementById('image').src = imgLinks[currentIndex];
-    currentIndex++;
-    if(currentIndex >= imgLinks.length) {
-        currentIndex = 0;
-    }
+setInterval(function () {
+	document.getElementById('image').src = imgLinks[currentIndex];
+	currentIndex++;
+	if (currentIndex >= imgLinks.length) {
+		currentIndex = 0;
+	}
 }, delay);
 
 
@@ -607,24 +598,24 @@ popupBtnIn.addEventListener('click', function (e) {
 const news = document.getElementById("thrones");
 
 function addPost(post) {
-    const newPost = document.createElement("div"); 
+	const newPost = document.createElement("div");
 	newPost.classList.add("post")                   //блок с содержимым
-    const title = document.createElement("h2"); //element creation
+	const title = document.createElement("h2"); //element creation
 	title.textContent = `Как сказал известный персонаж - ${post.character.name}:`; // name = title
 	title.classList.add("post-title");  // claas add
 	newPost.appendChild(title);
 
-    const postText = document.createElement("p");
-	postText.textContent = `"${post.sentence}(с)"`; 
+	const postText = document.createElement("p");
+	postText.textContent = `"${post.sentence}(с)"`;
 	postText.classList.add("post-text");
-	newPost.appendChild(postText); 
+	newPost.appendChild(postText);
 
-	
+
 	const houseText = document.createElement("p");
-	houseText.textContent = `И как известно, он принадлежит к ${post.character.house.name}`; 
+	houseText.textContent = `И как известно, он принадлежит к ${post.character.house.name}`;
 	newPost.appendChild(houseText);
 	postText.classList.add("house-text");
-news.appendChild(newPost);
+	news.appendChild(newPost);
 }
 
 function publishPost() {
