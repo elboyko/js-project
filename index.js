@@ -136,9 +136,14 @@ let createComment = () => {
 		year: '2-digit',
 		month: 'short',
 		day: '2-digit',
-	});
-
+		
+	}
+	)
+	
+	
 	newDate.innerHTML = commentDate;
+		
+
 
 
 	//создание поля заполнения
@@ -228,7 +233,7 @@ setInterval(function () {
 
 
 //title animation
-var hotbod = document.querySelector("body");
+const hotbod = document.querySelector("body");
 
 function doStuff() {
 	hotbod.className += " animate";
@@ -599,10 +604,10 @@ const news = document.getElementById("thrones");
 
 function addPost(post) {
 	const newPost = document.createElement("div");
-	newPost.classList.add("post")                   //блок с содержимым
+	newPost.classList.add("post")                   
 	const title = document.createElement("h2"); //element creation
 	title.textContent = `Как сказал известный персонаж - ${post.character.name}:`; // name = title
-	title.classList.add("post-title");  // claas add
+	title.classList.add("post-title");  
 	newPost.appendChild(title);
 
 	const postText = document.createElement("p");
@@ -616,10 +621,11 @@ function addPost(post) {
 	newPost.appendChild(houseText);
 	postText.classList.add("house-text");
 	news.appendChild(newPost);
+	
 }
 
 function publishPost() {
-	fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
+	fetch("https://api.gameofthronesquotes.xyz/v1/random/2")
 		.then((response) => response.json())
 		.then((posts) => {
 			posts.forEach((post) => {
@@ -630,6 +636,5 @@ function publishPost() {
 			console.error("Ошибка", error);
 		});
 }
-
-
 document.getElementById('game_btn').addEventListener('click', publishPost);
+
