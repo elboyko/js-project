@@ -36,7 +36,7 @@ ul {
 
 .header {
    padding: 50px 0;
-   background: linear-gradient(180deg, #242b33 11.98%, rgba(156, 200, 250, 0.10) 51.04%, #242b33 92.19%), url("style/images/cinema.webp");
+   background: linear-gradient(180deg, #242b33 11.98%, rgba(156, 200, 250, 0.10) 51.04%, #242b33 92.19%), url("./style/images/cinema.webp");
 
    &__logo {
       display: flex;
@@ -492,7 +492,7 @@ body.dark-theme {
 
 .chat__bg {
    padding-top: 30px;
-   background: linear-gradient(180deg, #242b33 10%, rgba(156, 200, 250, 0.10) 55%, #242b33 90%), url("style/images/cinema.webp");
+   background: linear-gradient(180deg, #242b33 10%, rgba(156, 200, 250, 0.10) 55%, #242b33 90%), url("./style/images/cinema.webp");
    background-repeat: no-repeat;
    background-size: cover;
 }

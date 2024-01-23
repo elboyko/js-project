@@ -193,7 +193,7 @@ ul {
 
 .header {
   padding: 50px 0;
-  background: linear-gradient(180deg, #242b33 11.98%, rgba(156, 200, 250, 0.1) 51.04%, #242b33 92.19%), url("/style/images/cinema.webp");
+  background: linear-gradient(180deg, #242b33 11.98%, rgba(156, 200, 250, 0.1) 51.04%, #242b33 92.19%), url("./style/images/cinema.webp");
 }
 .header__logo {
   display: flex;
@@ -595,7 +595,7 @@ body.dark-theme {
 
 .chat__bg {
   padding-top: 30px;
-  background: linear-gradient(180deg, #242b33 10%, rgba(156, 200, 250, 0.1) 55%, #242b33 90%), url("/style/images/cinema.webp");
+  background: linear-gradient(180deg, #242b33 10%, rgba(156, 200, 250, 0.1) 55%, #242b33 90%), url("./style/images/cinema.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -886,7 +886,7 @@ h3 {
 .game__bg {
   padding-top: 30px;
   padding-bottom: 30px;
-  background-image: url("/style/images/igra_prestolov.jpg");
+  background-image: url("style/images/igra_prestolov.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
