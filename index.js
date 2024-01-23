@@ -112,13 +112,13 @@ let createComment = () => {
 		newAvatar.setAttribute('src', avatar.value);
 	} else {
 		const avatars = [
-			'/style/images/Carry.jpg',
-			'/style/images/Harry-Potter.jpg',
-			'/style/images/Carry.jpg',
-			'/style/images/Iron-Man.jpg',
-			'/style/images/Minion.jpg',
-			'/style/images/home-alone.jpg',
-			'/style/images/snow.jpg',
+			'style/images/Carry.jpg',
+			'style/images/Harry-Potter.jpg',
+			'style/images/Carry.jpg',
+			'style/images/Iron-Man.jpg',
+			'style/images/Minion.jpg',
+			'style/images/home-alone.jpg',
+			'style/images/snow.jpg',
 		];
 		const randomIndex = Math.floor(Math.random() * avatars.length);
 		const randomAvatar = avatars[randomIndex];
@@ -136,13 +136,13 @@ let createComment = () => {
 		year: '2-digit',
 		month: 'short',
 		day: '2-digit',
-		
+
 	}
 	)
-	
-	
+
+
 	newDate.innerHTML = commentDate;
-		
+
 
 
 
@@ -212,14 +212,14 @@ loadComments();
 
 // gallery
 const imgLinks = [
-	'/style/images/main__cat.jpg',
-	'/style/images/marvel.webp',
-	'/style/images/main__dog.jpeg',
-	'/style/images/Jumanji.jpg',
-	'/style/images/Harry.jpeg',
-	'/style/images/Godzilla.jpg',
-	'/style/images/Armageddon.webp',
-	'/style/images/Alaska.jpg',
+	'style/images/main__cat.jpg',
+	'style/images/marvel.webp',
+	'style/images/main__dog.jpeg',
+	'style/images/Jumanji.jpg',
+	'style/images/Harry.jpeg',
+	'style/images/Godzilla.jpg',
+	'style/images/Armageddon.webp',
+	'style/images/Alaska.jpg',
 ];
 const delay = 5000;
 let currentIndex = 0;
@@ -368,7 +368,7 @@ const comedyButton = document.getElementById("animation");
 function makeSound() {
 	const audio = new Audio();
 	audio.preload = 'auto';
-	audio.src = '/style/images/superhero-theme-7963.mp3';
+	audio.src = 'style/images/superhero-theme-7963.mp3';
 	audio.play();
 
 }
@@ -604,10 +604,10 @@ const news = document.getElementById("thrones");
 
 function addPost(post) {
 	const newPost = document.createElement("div");
-	newPost.classList.add("post")                   
+	newPost.classList.add("post")
 	const title = document.createElement("h2"); //element creation
 	title.textContent = `Как сказал известный персонаж - ${post.character.name}:`; // name = title
-	title.classList.add("post-title");  
+	title.classList.add("post-title");
 	newPost.appendChild(title);
 
 	const postText = document.createElement("p");
@@ -621,7 +621,7 @@ function addPost(post) {
 	newPost.appendChild(houseText);
 	postText.classList.add("house-text");
 	news.appendChild(newPost);
-	
+
 }
 
 function publishPost() {
