@@ -15,7 +15,7 @@ ____
 - [x] Якорная ссылка
 - [x] Хэдер
 
-![Landing](./images/landing.png)
+![Landing](style/images/landing.png)
 
 ___
 #####Технические детали
